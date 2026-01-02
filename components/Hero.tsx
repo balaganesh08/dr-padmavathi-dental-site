@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from './LanguageProvider';
 import { FiPhone, FiCalendar } from 'react-icons/fi';
@@ -50,6 +50,24 @@ export default function Hero() {
     const timeout = setTimeout(processEmbed, 1500);
     
     return () => clearTimeout(timeout);
+  }, []);
+
+  // Video behavior: reduce mobile height and ensure autoplay works; show controls on desktop only
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [showControls, setShowControls] = useState(false);
+
+  useEffect(() => {
+    const updateControls = () => setShowControls(window.innerWidth >= 1024);
+    updateControls();
+    window.addEventListener('resize', updateControls);
+
+    const v = videoRef.current;
+    if (v) {
+      v.muted = true;
+      v.play().catch(() => {});
+    }
+
+    return () => window.removeEventListener('resize', updateControls);
   }, []);
 
   return (
@@ -124,9 +142,10 @@ export default function Hero() {
           {/* Right Video (modern hero) */}
           <div className="relative block">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black">
-              {/* Responsive Autoplaying Video - Mobile-first portrait, switches to landscape on lg */}
-              <div className="relative aspect-[9/16] lg:aspect-[16/9]">
+              {/* Responsive Autoplaying Video - reduced height on mobile, switches to landscape on lg */}
+              <div className="relative h-56 sm:h-72 lg:aspect-[16/9] lg:h-auto">
                 <video
+                  ref={videoRef}
                   src="/videos/clinic.mp4"
                   poster="/Dr_Padmavathi.JPG"
                   className="w-full h-full object-cover"
@@ -134,7 +153,7 @@ export default function Hero() {
                   muted
                   loop
                   playsInline
-                  controls
+                  controls={showControls}
                   preload="metadata"
                 />
               </div>
