@@ -161,12 +161,16 @@ export const translations: Record<Language, Translations> = {
           title: 'Gap Closure (Midline)',
           description: 'Specialized treatment to close gaps between teeth.',
         },
+        laserDentistry: {
+          title: 'Laser Dentistry',
+          description: 'Advanced laser technology for precise and comfortable dental treatments.',
+        },
       },
     },
     timings: {
       title: 'Clinic Timings',
-      weekdays: 'Weekdays: 5:00 PM – 9:00 PM',
-      sunday: 'Sunday: 10:00 AM – 2:00 PM',
+      weekdays: 'Morning: 10:00 AM – 1:00 PM | Evening: 5:00 PM – 9:00 PM',
+      sunday: 'Morning: 10:00 AM – 1:00 PM',
     },
     testimonials: {
       title: 'What Our Patients Say',
@@ -289,12 +293,16 @@ export const translations: Record<Language, Translations> = {
           title: 'గ్యాప్ క్లోజర్ (మిడ్‌లైన్)',
           description: 'దంతాల మధ్య ఖాళీలను మూసివేయడానికి ప్రత్యేక చికిత్స.',
         },
+        laserDentistry: {
+          title: 'లేజర్ డెంటిస్ట్రీ',
+          description: 'ఖచ్చితమైన మరియు సౌకర్యవంతమైన దంత చికిత్సల కోసం అధునాతన లేజర్ సాంకేతికత.',
+        },
       },
     },
     timings: {
       title: 'క్లినిక్ సమయాలు',
-      weekdays: 'వారపు రోజులు: 5:00 PM – 9:00 PM',
-      sunday: 'ఆదివారం: 10:00 AM – 2:00 PM',
+      weekdays: 'ఉదయం: 10:00 AM – 1:00 PM | సాయంత్రం: 5:00 PM – 9:00 PM',
+      sunday: 'ఉదయం: 10:00 AM – 1:00 PM',
     },
     testimonials: {
       title: 'మా రోగులు ఏమి చెబుతున్నారు',

@@ -35,7 +35,7 @@ export default function Timings() {
                 </div>
                 <div className="sm:text-right">
                   <p className="text-xl sm:text-2xl font-bold gradient-text">{t.timings.weekdays}</p>
-                  <p className="text-xs text-gray-500 mt-1">Evening hours</p>
+                  <p className="text-xs text-gray-500 mt-1">Mon - Sat</p>
                 </div>
               </div>
             </div>

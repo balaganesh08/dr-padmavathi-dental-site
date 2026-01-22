@@ -101,6 +101,22 @@ export default function Footer() {
                 </button>
               </li>
               <li>
+                <a
+                  href="/specialties"
+                  className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
+                >
+                  Specialties
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/blog"
+                  className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
                 <button
                   onClick={() => scrollToSection('testimonials')}
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
@@ -109,12 +125,12 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('gallery')}
+                <a
+                  href="/gallery"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
                 >
                   {t.nav.gallery}
-                </button>
+                </a>
               </li>
               <li>
                 <button

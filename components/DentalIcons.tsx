@@ -222,3 +222,21 @@ export const GapClosureIcon: React.FC<IconProps> = ({ className }) => (
     <path d="M30 32L32 34L34 32" stroke="currentColor" strokeWidth="2" fill="none"/>
   </svg>
 );
+
+export const LaserIcon: React.FC<IconProps> = ({ className }) => (
+  <svg viewBox="0 0 64 64" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Tooth */}
+    <path d="M32 12L28 20L24 28L20 36L24 44L28 52L32 60L36 52L40 44L44 36L40 28L36 20L32 12Z" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+    {/* Laser device */}
+    <path d="M44 14L50 8L54 12L48 18" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+    <circle cx="48" cy="12" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
+    {/* Laser beams */}
+    <path d="M48 15L42 24L36 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+    <path d="M46 16L40 26L34 32" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
+    <path d="M50 16L44 26L38 32" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
+    {/* Light effect */}
+    <circle cx="36" cy="30" r="2" fill="currentColor" opacity="0.5"/>
+    <circle cx="34" cy="32" r="1.5" fill="currentColor" opacity="0.3"/>
+    <circle cx="38" cy="32" r="1.5" fill="currentColor" opacity="0.3"/>
+  </svg>
+);

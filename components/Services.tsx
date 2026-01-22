@@ -1,43 +1,52 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useLanguage } from './LanguageProvider';
+import { 
+  FaTooth, 
+  FaChild,
+  FaSmile,
+  FaMoon,
+  FaStar,
+  FaUserMd,
+  FaHeart,
+  FaHeartbeat,
+  FaGem,
+  FaCrown,
+  FaExpand,
+  FaLightbulb,
+  FaLayerGroup
+} from 'react-icons/fa';
+import { 
+  GiToothbrush,
+  GiLaserBurst,
+  GiBridge
+} from 'react-icons/gi';
 import {
-  ImplantIcon,
-  BracesIcon,
-  AlignersIcon,
-  RootCanalIcon,
-  KidsDentistryIcon,
-  SmileDesignIcon,
-  NightGuardIcon,
-  WhiteningIcon,
-  DenturesIcon,
-  ScalingIcon,
-  FillingsIcon,
-  GumTreatmentIcon,
-  BridgeIcon,
-  VeneersIcon,
-  CrownsIcon,
-  GapClosureIcon,
-} from './DentalIcons';
+  MdCleaningServices
+} from 'react-icons/md';
 
-const serviceIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  implants: ImplantIcon,
-  braces: BracesIcon,
-  clearAligners: AlignersIcon,
-  rootCanal: RootCanalIcon,
-  kidsDentistry: KidsDentistryIcon,
-  smileDesigning: SmileDesignIcon,
-  nightGuard: NightGuardIcon,
-  teethWhitening: WhiteningIcon,
-  dentures: DenturesIcon,
-  scaling: ScalingIcon,
-  fillings: FillingsIcon,
-  gumTreatment: GumTreatmentIcon,
-  bridge: BridgeIcon,
-  veneers: VeneersIcon,
-  crowns: CrownsIcon,
-  gapClosure: GapClosureIcon,
+// Icon files mapping - using local icons where available
+const serviceIcons: Record<string, { type: 'icon' | 'image', path?: string, component?: React.ComponentType<{ className?: string }> }> = {
+  implants: { type: 'image', path: '/icons/dental-implant.png' },
+  braces: { type: 'image', path: '/icons/braces.png' },
+  clearAligners: { type: 'image', path: '/icons/clear-aligners.avif' },
+  rootCanal: { type: 'image', path: '/icons/root-canal.png' },
+  kidsDentistry: { type: 'image', path: '/icons/kids-dentistry.webp' },
+  smileDesigning: { type: 'icon', component: FaSmile },
+  nightGuard: { type: 'image', path: '/icons/mouth-guard.png' },
+  teethWhitening: { type: 'image', path: '/icons/tooth-whitening.png' },
+  dentures: { type: 'icon', component: FaUserMd },
+  scaling: { type: 'icon', component: GiToothbrush },
+  fillings: { type: 'icon', component: FaTooth },
+  gumTreatment: { type: 'icon', component: FaHeart },
+  bridge: { type: 'icon', component: GiBridge },
+  veneers: { type: 'icon', component: FaGem },
+  crowns: { type: 'icon', component: FaCrown },
+  gapClosure: { type: 'icon', component: FaExpand },
+  laserDentistry: { type: 'icon', component: GiLaserBurst },
 };
 
 export default function Services() {
@@ -60,6 +69,7 @@ export default function Services() {
     'veneers',
     'crowns',
     'gapClosure',
+    'laserDentistry',
   ] as const;
 
   return (
@@ -82,8 +92,8 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {serviceKeys.map((key, index) => {
-            const Icon = serviceIcons[key];
+          {serviceKeys.slice(0, 8).map((key, index) => {
+            const serviceConfig = serviceIcons[key];
             const service = t.services.items[key];
             
             return (
@@ -93,7 +103,17 @@ export default function Services() {
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <div className="bg-gradient-to-br from-teal-50 to-green-50 rounded-2xl w-16 h-16 flex items-center justify-center mb-4 group-hover:from-teal-600 group-hover:to-green-600 transition-all duration-300 shadow-md group-hover:shadow-lg">
-                  <Icon className="w-10 h-10 text-teal-600 group-hover:text-white transition-all duration-300 group-hover:scale-110" />
+                  {serviceConfig.type === 'image' && serviceConfig.path ? (
+                    <Image
+                      src={serviceConfig.path}
+                      alt={service.title}
+                      width={40}
+                      height={40}
+                      className="w-10 h-10 transition-all duration-300 group-hover:scale-110"
+                    />
+                  ) : serviceConfig.component ? (
+                    <serviceConfig.component className="w-10 h-10 text-teal-600 group-hover:text-white transition-all duration-300 group-hover:scale-110" />
+                  ) : null}
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors">
                   {service.title}
@@ -104,6 +124,16 @@ export default function Services() {
               </div>
             );
           })}
+        </div>
+
+        {/* View All Services Button */}
+        <div className="text-center mt-12">
+          <Link
+            href="/specialties"
+            className="btn-primary inline-block"
+          >
+            View All Services
+          </Link>
         </div>
       </div>
     </section>

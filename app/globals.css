@@ -19,11 +19,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-teal-600 to-green-600 hover:from-teal-700 hover:to-green-700 text-white font-medium py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm;
+    @apply bg-gradient-to-r from-teal-600 to-green-600 hover:from-teal-700 hover:to-green-700 text-white font-semibold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 text-sm;
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-teal-600 font-medium py-3 px-6 rounded-xl border border-teal-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm;
+    @apply bg-white hover:bg-gray-50 text-teal-600 font-semibold py-3.5 px-8 rounded-xl border-2 border-teal-600 transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1 text-sm;
   }
   
   .section-container {
@@ -31,7 +31,7 @@
   }
   
   .card {
-    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100;
+    @apply bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100 hover:border-teal-200;
   }
 
   .gradient-text {
@@ -40,6 +40,50 @@
 
   .glass-effect {
     @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+
+  /* Enhanced Link Styles */
+  .link-hover {
+    @apply relative overflow-hidden;
+  }
+
+  .link-hover::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-teal-600 to-green-600 transform scale-x-0 transition-transform duration-300;
+  }
+
+  .link-hover:hover::after {
+    @apply scale-x-100;
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-teal-500 to-green-500 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply from-teal-600 to-green-600;
+  }
+
+  /* Smooth Reveal Animation */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  /* Pulse Animation for CTA */
+  .pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
 
@@ -51,6 +95,15 @@
   .animate-gradient {
     background-size: 200% 200%;
     animation: gradient 15s ease infinite;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .bg-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(20, 184, 166, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
   }
 }
 
@@ -72,5 +125,21 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
   }
 }

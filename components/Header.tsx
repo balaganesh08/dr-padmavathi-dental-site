@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useLanguage } from './LanguageProvider';
 import { FiMenu, FiX, FiPhone, FiGlobe } from 'react-icons/fi';
 
@@ -9,6 +11,8 @@ export default function Header() {
   const { t, language, setLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +22,20 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+  const handleNavigation = (sectionId: string) => {
+    if (isHomePage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMobileMenuOpen(false);
+      }
+    } else {
+      window.location.href = `/#${sectionId}`;
     }
+  };
+
+  const scrollToSection = (id: string) => {
+    handleNavigation(id);
   };
 
   return (
@@ -39,9 +51,9 @@ export default function Header() {
           isScrolled ? 'h-16' : 'h-20'
         }`}>
           {/* Logo */}
-          <div
-            className="flex-shrink-0 cursor-pointer group"
-            onClick={() => scrollToSection('home')}
+          <Link
+            href="/"
+            className="flex-shrink-0 group"
           >
             <div className="relative group-hover:scale-105 transition-transform" style={{ 
               width: isScrolled ? '72px' : '88px',
@@ -58,50 +70,40 @@ export default function Header() {
                 priority
               />
             </div>
-          </div>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1 xl:space-x-2 mx-6">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
-            >
-              {t.nav.home}
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
-            >
-              {t.nav.about}
-            </button>
-            <button
-              onClick={() => scrollToSection('services')}
-              className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
-            >
-              {t.nav.services}
-            </button>
-            <button
-              onClick={() => scrollToSection('testimonials')}
-              className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
-            >
-              {t.nav.testimonials}
-            </button>
-            <button
-              onClick={() => scrollToSection('gallery')}
-              className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
-            >
-              {t.nav.gallery}
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
-            >
-              {t.nav.contact}
-            </button>
-          </div>
+          {/* Right Side - Navigation & Actions */}
+          <div className="hidden lg:flex items-center space-x-3 xl:space-x-4 ml-auto">
+            {/* Desktop Navigation */}
+            <div className="flex items-center space-x-1 xl:space-x-2">
+              <a
+                href="/"
+                className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+              >
+                {t.nav.home}
+              </a>
+              <a
+                href="/specialties"
+                className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+              >
+                Specialties
+              </a>
+              <a
+                href="/about"
+                className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+              >
+                {t.nav.about}
+              </a>
+              <a
+                href="/contact"
+                className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+              >
+                {t.nav.contact}
+              </a>
+            </div>
 
-          {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center space-x-3 xl:space-x-4 flex-shrink-0">
+            {/* Divider */}
+            <div className="h-8 w-px bg-gray-200"></div>
             {/* Language Switcher */}
             <div className="flex items-center space-x-1 bg-gray-50 rounded-xl p-1 border border-gray-200">
               <FiGlobe className="text-gray-500 ml-1 w-3.5 h-3.5" />
@@ -154,42 +156,34 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 space-y-1 border-t border-gray-200 animate-slide-up">
-            <button
-              onClick={() => scrollToSection('home')}
+            <a
+              href="/"
               className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {t.nav.home}
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
+            </a>
+            <a
+              href="/specialties"
               className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Specialties
+            </a>
+            <a
+              href="/about"
+              className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {t.nav.about}
-            </button>
-            <button
-              onClick={() => scrollToSection('services')}
+            </a>
+            <a
+              href="/contact"
               className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
-            >
-              {t.nav.services}
-            </button>
-            <button
-              onClick={() => scrollToSection('testimonials')}
-              className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
-            >
-              {t.nav.testimonials}
-            </button>
-            <button
-              onClick={() => scrollToSection('gallery')}
-              className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
-            >
-              {t.nav.gallery}
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {t.nav.contact}
-            </button>
+            </a>
             <div className="flex items-center justify-between pt-3 mt-3 border-t border-gray-200 gap-3">
               <div className="flex items-center space-x-1 bg-gray-50 rounded-xl p-1 border border-gray-200 flex-1">
                 <FiGlobe className="text-gray-500 ml-1" />
