@@ -15,19 +15,30 @@ export default function Hero() {
     }
   };
 
-  // Load Instagram embed script
+  // Load Instagram embed script - defer until after page load
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.instagram.com/embed.js';
-    script.async = true;
-    script.onload = () => {
-      if (window.instgrm) {
-        window.instgrm.Embeds.process();
-      }
+    const loadInstagramScript = () => {
+      const script = document.createElement('script');
+      script.src = 'https://www.instagram.com/embed.js';
+      script.async = true;
+      script.defer = true;
+      script.onload = () => {
+        if (window.instgrm) {
+          window.instgrm.Embeds.process();
+        }
+      };
+      document.body.appendChild(script);
     };
-    document.body.appendChild(script);
+
+    // Defer script loading until after page is fully loaded
+    if (document.readyState === 'complete') {
+      loadInstagramScript();
+    } else {
+      window.addEventListener('load', loadInstagramScript);
+    }
 
     return () => {
+      window.removeEventListener('load', loadInstagramScript);
       const existingScript = document.querySelector('script[src="https://www.instagram.com/embed.js"]');
       if (existingScript) {
         existingScript.remove();
@@ -154,7 +165,8 @@ export default function Hero() {
                   loop
                   playsInline
                   controls={showControls}
-                  preload="metadata"
+                  preload="none"
+                  loading="lazy"
                 />
               </div>
             </div>

@@ -44,7 +44,7 @@ export default function WhyChoose() {
     },
     {
       icon: FaHeartbeat,
-      title: language === 'en' ? '15+ Years Experience' : '15+ సంవత్సరాల అనుభవం',
+      title: language === 'en' ? '8+ Years Experience' : '8+ సంవత్సరాల అనుభవం',
       points: language === 'en'
         ? [
             'Specialist Pedodontist',

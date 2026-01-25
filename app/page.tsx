@@ -1,15 +1,18 @@
+import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Stats from '@/components/Stats';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import WhyChoose from '@/components/WhyChoose';
-import BookingSection from '@/components/BookingSection';
-import Testimonials from '@/components/Testimonials';
-import Instagram from '@/components/Instagram';
-import FAQ from '@/components/FAQ';
-import Footer from '@/components/Footer';
 import FloatingButton from '@/components/FloatingButton';
+
+// Lazy load below-the-fold components
+const BookingSection = dynamic(() => import('@/components/BookingSection'), { ssr: true });
+const Testimonials = dynamic(() => import('@/components/Testimonials'), { ssr: true });
+const Instagram = dynamic(() => import('@/components/Instagram'), { ssr: false });
+const FAQ = dynamic(() => import('@/components/FAQ'), { ssr: true });
+const Footer = dynamic(() => import('@/components/Footer'), { ssr: true });
 
 export default function Home() {
   return (

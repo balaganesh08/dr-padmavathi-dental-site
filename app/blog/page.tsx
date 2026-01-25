@@ -14,6 +14,51 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const blogs = [
     {
+      slug: 'teeth-whitening-guide-kakinada',
+      title: 'Professional Teeth Whitening in Kakinada: Complete Guide 2026',
+      excerpt: 'Everything you need to know about professional teeth whitening in Kakinada. Learn about procedures, costs, benefits, and how to maintain your bright smile.',
+      image: 'https://images.pexels.com/photos/3845630/pexels-photo-3845630.jpeg?auto=compress&cs=tinysrgb&w=800',
+      date: 'January 24, 2026',
+      readTime: '6 min read',
+      category: 'Cosmetic Dentistry'
+    },
+    {
+      slug: 'root-canal-myths-facts-kakinada',
+      title: '10 Root Canal Myths Debunked by Kakinada Dentists',
+      excerpt: 'Scared of root canals? Learn the truth! Expert dentists in Kakinada debunk common myths about root canal treatment and explain why it\'s painless.',
+      image: 'https://images.pexels.com/photos/3779705/pexels-photo-3779705.jpeg?auto=compress&cs=tinysrgb&w=800',
+      date: 'January 22, 2026',
+      readTime: '5 min read',
+      category: 'Treatments'
+    },
+    {
+      slug: 'dental-emergency-kakinada',
+      title: 'Dental Emergencies in Kakinada: What to Do & Where to Go',
+      excerpt: 'Quick guide to handling dental emergencies in Kakinada. Know when to seek immediate care and how to manage common dental emergencies at home.',
+      image: 'https://images.pexels.com/photos/6627456/pexels-photo-6627456.jpeg?auto=compress&cs=tinysrgb&w=800',
+      date: 'January 20, 2026',
+      readTime: '7 min read',
+      category: 'Emergency Care'
+    },
+    {
+      slug: 'braces-clear-aligners-kakinada',
+      title: 'Braces vs Clear Aligners: Which is Better for You in Kakinada?',
+      excerpt: 'Detailed comparison of traditional braces and clear aligners in Kakinada. Cost, duration, effectiveness, and patient experiences explained.',
+      image: 'https://images.pexels.com/photos/6528874/pexels-photo-6528874.jpeg?auto=compress&cs=tinysrgb&w=800',
+      date: 'January 18, 2026',
+      readTime: '8 min read',
+      category: 'Orthodontics'
+    },
+    {
+      slug: 'oral-hygiene-tips-kakinada',
+      title: '15 Daily Oral Hygiene Tips from Top Dentists in Kakinada',
+      excerpt: 'Master your oral hygiene routine with expert tips from Kakinada dentists. Simple daily habits that prevent cavities, gum disease, and bad breath.',
+      image: 'https://images.pexels.com/photos/3779709/pexels-photo-3779709.jpeg?auto=compress&cs=tinysrgb&w=800',
+      date: 'January 16, 2026',
+      readTime: '6 min read',
+      category: 'Prevention'
+    },
+    {
       slug: 'best-dentist-kakinada-guide',
       title: 'Complete Guide to Choosing the Best Dentist in Kakinada',
       excerpt: 'Finding the right dentist in Kakinada for your family\'s dental needs. Learn what to look for in a dental clinic, questions to ask, and how to ensure quality care.',
@@ -39,6 +84,15 @@ export default function BlogPage() {
       date: 'January 5, 2026',
       readTime: '6 min read',
       category: 'Pediatric Dentistry'
+    },
+    {
+      slug: 'gum-disease-prevention-kakinada',
+      title: 'How to Prevent Gum Disease: Expert Advice from Kakinada Dentists',
+      excerpt: 'Comprehensive guide to preventing gum disease in Kakinada. Learn about causes, symptoms, treatments, and prevention strategies for healthy gums.',
+      image: 'https://images.pexels.com/photos/6528846/pexels-photo-6528846.jpeg?auto=compress&cs=tinysrgb&w=800',
+      date: 'January 3, 2026',
+      readTime: '7 min read',
+      category: 'Gum Health'
     }
   ];
 

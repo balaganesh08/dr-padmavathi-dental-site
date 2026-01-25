@@ -59,9 +59,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Blog posts
   const blogPosts = [
+    'teeth-whitening-guide-kakinada',
+    'root-canal-myths-facts-kakinada',
+    'dental-emergency-kakinada',
+    'braces-clear-aligners-kakinada',
+    'oral-hygiene-tips-kakinada',
     'best-dentist-kakinada-guide',
     'dental-implants-vs-dentures-kakinada',
     'kids-dental-care-kakinada',
+    'gum-disease-prevention-kakinada',
   ].map(slug => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),

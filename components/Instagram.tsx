@@ -65,10 +65,10 @@ export default function Instagram() {
   useEffect(() => {
     fetchInstagramPosts();
     
-    // Auto-refresh every 30 minutes to get new posts
+    // Auto-refresh every hour to get new posts (reduced from 30 min for performance)
     const refreshInterval = setInterval(() => {
       fetchInstagramPosts();
-    }, 30 * 60 * 1000); // 30 minutes
+    }, 60 * 60 * 1000); // 60 minutes
 
     return () => clearInterval(refreshInterval);
   }, []);

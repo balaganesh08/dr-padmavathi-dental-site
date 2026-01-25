@@ -133,6 +133,7 @@ export default function Services() {
                       width={40}
                       height={40}
                       className="w-10 h-10 transition-all duration-300 group-hover:scale-110"
+                      loading="lazy"
                     />
                   ) : serviceConfig.component ? (
                     <serviceConfig.component className="w-10 h-10 text-teal-600 group-hover:text-white transition-all duration-300 group-hover:scale-110" />
