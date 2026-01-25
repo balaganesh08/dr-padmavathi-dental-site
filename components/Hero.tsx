@@ -166,7 +166,6 @@ export default function Hero() {
                   playsInline
                   controls={showControls}
                   preload="none"
-                  loading="lazy"
                 />
               </div>
             </div>
