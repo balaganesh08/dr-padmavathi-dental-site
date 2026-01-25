@@ -76,9 +76,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preconnect to optimize font loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://images.pexels.com" />
+        <link rel="dns-prefetch" href="https://www.instagram.com" />
+        
+        {/* Preload critical LCP images */}
+        <link rel="preload" as="image" href="/Dr_Padmavathi.JPG" fetchPriority="high" />
+        
+        {/* Structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

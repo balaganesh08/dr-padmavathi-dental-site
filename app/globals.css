@@ -10,32 +10,47 @@
   body {
     @apply bg-white text-gray-900 antialiased;
     font-family: var(--font-lato), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
+    text-rendering: optimizeLegibility;
   }
   
   h1 {
     @apply text-3xl md:text-4xl;
+    contain: layout style paint;
   }
   
   h2 {
     @apply text-2xl md:text-3xl;
+    contain: layout style paint;
   }
   
   h3 {
     @apply text-xl md:text-2xl;
+    contain: layout style paint;
+  }
+  
+  /* Prevent layout shift */
+  img, video {
+    content-visibility: auto;
   }
 }
 
 @layer components {
   .btn-primary {
     @apply bg-gradient-to-r from-teal-600 to-green-600 hover:from-teal-700 hover:to-green-700 text-white font-semibold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 text-sm;
+    will-change: transform;
+    backface-visibility: hidden;
   }
   
   .btn-secondary {
     @apply bg-white hover:bg-gray-50 text-teal-600 font-semibold py-3.5 px-8 rounded-xl border-2 border-teal-600 transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1 text-sm;
+    will-change: transform;
+    backface-visibility: hidden;
   }
   
   .section-container {
@@ -44,6 +59,8 @@
   
   .card {
     @apply bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100 hover:border-teal-200;
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
   }
 
   .gradient-text {
@@ -62,6 +79,7 @@
   .link-hover::after {
     content: '';
     @apply absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-teal-600 to-green-600 transform scale-x-0 transition-transform duration-300;
+    will-change: transform;
   }
 
   .link-hover:hover::after {
@@ -102,11 +120,13 @@
 @layer utilities {
   .animate-float {
     animation: float 6s ease-in-out infinite;
+    will-change: transform;
   }
 
   .animate-gradient {
     background-size: 200% 200%;
     animation: gradient 15s ease infinite;
+    will-change: background-position;
   }
 
   .text-shadow {
@@ -153,5 +173,20 @@
   }
   50% {
     opacity: 0.8;
+  }
+}
+
+/* Performance optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

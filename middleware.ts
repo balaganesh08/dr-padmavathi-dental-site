@@ -9,13 +9,22 @@ export function middleware(request: NextRequest) {
   response.headers.set('X-Frame-Options', 'SAMEORIGIN');
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('Referrer-Policy', 'origin-when-cross-origin');
+  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
   
   // Cache static assets aggressively
   if (
     request.nextUrl.pathname.startsWith('/_next/static') ||
-    request.nextUrl.pathname.match(/\.(jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2)$/)
+    request.nextUrl.pathname.match(/\.(jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|eot)$/)
   ) {
     response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+  }
+  
+  // Cache pages for 1 hour
+  if (
+    !request.nextUrl.pathname.startsWith('/_next') &&
+    !request.nextUrl.pathname.startsWith('/api')
+  ) {
+    response.headers.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
   }
 
   return response;
