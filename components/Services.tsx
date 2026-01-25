@@ -52,6 +52,27 @@ const serviceIcons: Record<string, { type: 'icon' | 'image', path?: string, comp
 export default function Services() {
   const { t } = useLanguage();
 
+  // Map service keys to their URL slugs
+  const serviceUrlMap: Record<string, string> = {
+    implants: '/services/implants',
+    braces: '/services/braces',
+    clearAligners: '/services/clear-aligners',
+    rootCanal: '/services/root-canal',
+    kidsDentistry: '/services/kids-dentistry',
+    smileDesigning: '/services/smile-designing',
+    nightGuard: '/services/night-guard',
+    teethWhitening: '/services/teeth-whitening',
+    dentures: '/services/dentures',
+    scaling: '/services/scaling',
+    fillings: '/services/fillings',
+    gumTreatment: '/services/gum-treatment',
+    bridge: '/services/bridge',
+    veneers: '/services/veneers',
+    crowns: '/services/crowns',
+    gapClosure: '/services/gap-closure',
+    laserDentistry: '/services/laser-dentistry',
+  };
+
   const serviceKeys = [
     'implants',
     'braces',
@@ -95,10 +116,12 @@ export default function Services() {
           {serviceKeys.slice(0, 8).map((key, index) => {
             const serviceConfig = serviceIcons[key];
             const service = t.services.items[key];
+            const serviceUrl = serviceUrlMap[key];
             
             return (
-              <div
+              <Link
                 key={key}
+                href={serviceUrl}
                 className="card group hover:border-teal-300 cursor-pointer transform hover:-translate-y-1 transition-all duration-300 hover:scale-[1.02]"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
@@ -121,7 +144,7 @@ export default function Services() {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {service.description}
                 </p>
-              </div>
+              </Link>
             );
           })}
         </div>

@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about',
     '/specialties',
+    '/gallery',
     '/blog',
     '/contact',
   ].map(route => ({
@@ -30,6 +31,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Service pages
+  const services = [
+    'braces',
+    'bridge',
+    'clear-aligners',
+    'crowns',
+    'dentures',
+    'fillings',
+    'gap-closure',
+    'gum-treatment',
+    'implants',
+    'kids-dentistry',
+    'laser-dentistry',
+    'night-guard',
+    'root-canal',
+    'scaling',
+    'smile-designing',
+    'teeth-whitening',
+    'veneers',
+  ].map(service => ({
+    url: `${baseUrl}/services/${service}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   // Blog posts
   const blogPosts = [
     'best-dentist-kakinada-guide',
@@ -42,6 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...routes, ...treatments, ...blogPosts];
+  return [...routes, ...treatments, ...services, ...blogPosts];
 }
 

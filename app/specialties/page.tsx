@@ -20,23 +20,30 @@ export default function SpecialtiesPage() {
   const specialties = [
     {
       title: 'Dental Implants',
-      slug: 'dental-implants',
+      slug: 'implants',
       description: 'Permanent tooth replacement solution for a natural-looking smile. Advanced titanium implants that last a lifetime.',
       image: '/services/Dental-Implant.jpg',
       category: 'Restorative'
     },
     {
-      title: 'Braces & Aligners',
-      slug: 'braces-aligners',
-      description: 'Straighten your teeth with traditional braces or invisible clear aligners. Custom treatment plans for perfect smiles.',
+      title: 'Braces',
+      slug: 'braces',
+      description: 'Straighten your teeth with traditional metal or ceramic braces. Custom treatment plans for perfect smiles.',
       image: '/services/Braces.jpg',
+      category: 'Orthodontics'
+    },
+    {
+      title: 'Clear Aligners',
+      slug: 'clear-aligners',
+      description: 'Invisible orthodontic treatment. Straighten teeth discreetly with removable aligners.',
+      image: '/services/clear-aligners.jpg',
       category: 'Orthodontics'
     },
     {
       title: 'Root Canal Treatment',
       slug: 'root-canal',
       description: 'Pain-free root canal therapy to save your natural teeth. Advanced techniques for comfortable treatment.',
-      image: '/services/clear-aligners.jpg',
+      image: 'https://images.pexels.com/photos/3779705/pexels-photo-3779705.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
       category: 'Endodontics'
     },
     {
@@ -62,13 +69,13 @@ export default function SpecialtiesPage() {
     },
     {
       title: 'Dental Crowns',
-      slug: 'dental-crowns',
+      slug: 'crowns',
       description: 'Durable crowns to restore damaged or weakened teeth. Custom-made for natural appearance and function.',
       image: 'https://images.pexels.com/photos/3845623/pexels-photo-3845623.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
       category: 'Restorative'
     },
     {
-      title: 'Complete Dentures',
+      title: 'Dentures',
       slug: 'dentures',
       description: 'Full and partial dentures for comfortable tooth replacement. Natural-looking and perfectly fitted.',
       image: 'https://images.pexels.com/photos/6528864/pexels-photo-6528864.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
@@ -76,13 +83,13 @@ export default function SpecialtiesPage() {
     },
     {
       title: 'Scaling & Cleaning',
-      slug: 'scaling-cleaning',
+      slug: 'scaling',
       description: 'Professional deep cleaning to maintain healthy gums and teeth. Prevent gum disease and tooth decay.',
       image: 'https://images.pexels.com/photos/3779709/pexels-photo-3779709.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
       category: 'Preventive'
     },
     {
-      title: 'Composite Fillings',
+      title: 'Dental Fillings',
       slug: 'fillings',
       description: 'Tooth-colored fillings for natural appearance. Restore decayed or damaged teeth seamlessly.',
       image: 'https://images.pexels.com/photos/3845464/pexels-photo-3845464.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
@@ -91,19 +98,19 @@ export default function SpecialtiesPage() {
     {
       title: 'Gum Treatment',
       slug: 'gum-treatment',
-      description: 'Advanced treatments for healthy gums. Cosmetic gum procedures for a perfect smile frame.',
+      description: 'Advanced treatments for healthy gums. Cure bleeding gums and periodontal disease.',
       image: 'https://images.pexels.com/photos/3845622/pexels-photo-3845622.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
       category: 'Periodontics'
     },
     {
       title: 'Dental Bridge',
-      slug: 'dental-bridge',
+      slug: 'bridge',
       description: 'Fixed bridgework to replace missing teeth. Restore your smile and chewing function.',
       image: 'https://images.pexels.com/photos/6627333/pexels-photo-6627333.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
       category: 'Restorative'
     },
     {
-      title: 'Ceramic Veneers',
+      title: 'Porcelain Veneers',
       slug: 'veneers',
       description: 'Porcelain veneers for a flawless smile transformation. Ultra-thin shells for perfect teeth.',
       image: 'https://images.pexels.com/photos/6627549/pexels-photo-6627549.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
@@ -220,7 +227,7 @@ export default function SpecialtiesPage() {
                       {specialty.description}
                     </p>
                     <Link
-                      href={`/treatments/${specialty.slug}`}
+                      href={`/services/${specialty.slug}`}
                       className="inline-flex items-center gap-2 text-teal-600 font-semibold hover:gap-3 transition-all group"
                     >
                       FIND OUT MORE

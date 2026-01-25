@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Lato } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/components/LanguageProvider';
 
-const poppins = Poppins({ 
+const lato = Lato({ 
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['300', '400', '700', '900'],
   display: 'swap',
-  variable: '--font-poppins',
+  variable: '--font-lato',
 });
 
 export const metadata: Metadata = {
@@ -79,7 +79,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className={`${poppins.variable} font-sans`}>
+      <body className={`${lato.variable} font-sans`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>
