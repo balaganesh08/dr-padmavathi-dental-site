@@ -89,7 +89,12 @@ export default function About() {
 
           {/* Doctor Photo - Right Side */}
           <div className="relative order-1 md:order-2">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            {/* Decorative frame layers behind the image */}
+            <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-teal-500 to-green-500 rounded-2xl opacity-20 z-0"></div>
+            <div className="absolute -bottom-4 -left-4 w-full h-full bg-gradient-to-tr from-green-600 to-teal-600 rounded-2xl opacity-15 z-0"></div>
+            
+            {/* Main image container */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl z-10 border-4 border-white">
               <div className="relative aspect-[4/3] bg-gradient-to-br from-teal-100 via-green-100 to-teal-50">
                 <Image
                   src="/Dr_Padmavathi.JPG"
@@ -97,13 +102,10 @@ export default function About() {
                   fill
                   className="object-cover"
                   priority
-                  fetchPriority="high"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>
-            {/* Subtle decorative element */}
-            <div className="absolute -z-10 -bottom-3 -left-3 w-full h-full bg-gradient-to-br from-teal-200 to-green-200 rounded-2xl opacity-15 blur-2xl"></div>
           </div>
         </div>
       </div>

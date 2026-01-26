@@ -43,98 +43,98 @@ export default function SpecialtiesPage() {
       title: 'Root Canal Treatment',
       slug: 'root-canal',
       description: 'Pain-free root canal therapy to save your natural teeth. Advanced techniques for comfortable treatment.',
-      image: 'https://images.pexels.com/photos/3779705/pexels-photo-3779705.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/Root_Canal.svg',
       category: 'Endodontics'
     },
     {
       title: 'Kids Dentistry',
       slug: 'kids-dentistry',
       description: 'Specialized dental care for children in a friendly environment. Making dental visits fun and comfortable.',
-      image: 'https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/pediatric-dentistry.jpg',
       category: 'Pediatric'
     },
     {
       title: 'Teeth Whitening',
       slug: 'teeth-whitening',
       description: 'Professional teeth whitening in just one hour. Get a brighter, whiter smile with safe and effective treatments.',
-      image: 'https://images.pexels.com/photos/3845630/pexels-photo-3845630.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/teeth-whitening.jpg',
       category: 'Cosmetic'
     },
     {
       title: 'Smile Designing',
       slug: 'smile-designing',
       description: 'Complete smile makeover to enhance your confidence. Combining multiple treatments for your dream smile.',
-      image: 'https://images.pexels.com/photos/6627537/pexels-photo-6627537.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/teeth-whitening.jpg',
       category: 'Cosmetic'
     },
     {
       title: 'Dental Crowns',
       slug: 'crowns',
       description: 'Durable crowns to restore damaged or weakened teeth. Custom-made for natural appearance and function.',
-      image: 'https://images.pexels.com/photos/3845623/pexels-photo-3845623.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/Dental-Implant.jpg',
       category: 'Restorative'
     },
     {
       title: 'Dentures',
       slug: 'dentures',
       description: 'Full and partial dentures for comfortable tooth replacement. Natural-looking and perfectly fitted.',
-      image: 'https://images.pexels.com/photos/6528864/pexels-photo-6528864.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/dental-bridge.jpg',
       category: 'Prosthodontics'
     },
     {
       title: 'Scaling & Cleaning',
       slug: 'scaling',
       description: 'Professional deep cleaning to maintain healthy gums and teeth. Prevent gum disease and tooth decay.',
-      image: 'https://images.pexels.com/photos/3779709/pexels-photo-3779709.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/Gum-Treatment.jpg',
       category: 'Preventive'
     },
     {
       title: 'Dental Fillings',
       slug: 'fillings',
       description: 'Tooth-colored fillings for natural appearance. Restore decayed or damaged teeth seamlessly.',
-      image: 'https://images.pexels.com/photos/3845464/pexels-photo-3845464.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/Dental-Fillings.jpg',
       category: 'Restorative'
     },
     {
       title: 'Gum Treatment',
       slug: 'gum-treatment',
       description: 'Advanced treatments for healthy gums. Cure bleeding gums and periodontal disease.',
-      image: 'https://images.pexels.com/photos/3845622/pexels-photo-3845622.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/Gum-Treatment.jpg',
       category: 'Periodontics'
     },
     {
       title: 'Dental Bridge',
       slug: 'bridge',
       description: 'Fixed bridgework to replace missing teeth. Restore your smile and chewing function.',
-      image: 'https://images.pexels.com/photos/6627333/pexels-photo-6627333.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/dental-bridge.jpg',
       category: 'Restorative'
     },
     {
       title: 'Porcelain Veneers',
       slug: 'veneers',
       description: 'Porcelain veneers for a flawless smile transformation. Ultra-thin shells for perfect teeth.',
-      image: 'https://images.pexels.com/photos/6627549/pexels-photo-6627549.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/porcelain-veneers.jpg',
       category: 'Cosmetic'
     },
     {
       title: 'Laser Dentistry',
       slug: 'laser-dentistry',
       description: 'Advanced laser technology for precise and comfortable treatments. Minimally invasive procedures.',
-      image: 'https://images.pexels.com/photos/6627456/pexels-photo-6627456.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/Dental-Implant.jpg',
       category: 'Advanced'
     },
     {
       title: 'Night Guard',
       slug: 'night-guard',
       description: 'Custom night guards for teeth grinding and TMJ disorders. Protect your teeth while you sleep.',
-      image: 'https://images.pexels.com/photos/3845617/pexels-photo-3845617.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/night-guard.jpg',
       category: 'Preventive'
     },
     {
       title: 'Gap Closure',
       slug: 'gap-closure',
       description: 'Specialized treatment to close gaps between teeth. Achieve a uniform, beautiful smile.',
-      image: 'https://images.pexels.com/photos/6627450/pexels-photo-6627450.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: '/services/Braces.jpg',
       category: 'Orthodontics'
     },
   ];
@@ -165,76 +165,93 @@ export default function SpecialtiesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <Header />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-teal-600 to-green-600 py-20 pt-28">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative pt-32 pb-24 overflow-hidden">
+          {/* Background with gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-600 via-teal-500 to-green-600">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.1),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.05),transparent_50%)]"></div>
+          </div>
+          
+          {/* Decorative elements */}
+          <div className="absolute top-20 right-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center text-white">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Our Specialties
+              <div className="inline-block mb-4">
+                <span className="bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm font-semibold px-6 py-2 rounded-full">
+                  16+ Dental Services
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Our <span className="text-yellow-300">Specialties</span>
               </h1>
-              <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-                Comprehensive dental care for you and your family. Expert treatments with advanced technology.
+              <p className="text-xl md:text-2xl text-teal-50 max-w-4xl mx-auto leading-relaxed">
+                Comprehensive dental care for you and your family. Expert treatments with advanced technology and compassionate care.
               </p>
+              
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap items-center justify-center gap-8 mt-12">
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">2000+</div>
+                  <div className="text-teal-100 text-sm">Happy Patients</div>
+                </div>
+                <div className="hidden sm:block w-px h-12 bg-white/30"></div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">8+</div>
+                  <div className="text-teal-100 text-sm">Years Experience</div>
+                </div>
+                <div className="hidden sm:block w-px h-12 bg-white/30"></div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">16+</div>
+                  <div className="text-teal-100 text-sm">Specialties</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Introduction */}
-        <section className="py-12 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              What We Do
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              The art & science of Dentistry has many facets that include knowledge of Biology, Medicine, 
-              Engineering, Material science, Psychology, Artistry, and Humanitarianism. We offer comprehensive 
-              dental specialties to ensure complete oral health care for every patient.
-            </p>
-          </div>
-        </section>
-
         {/* Services Grid */}
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {specialties.map((specialty, index) => (
-                <div
+                <Link
                   key={index}
-                  className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-teal-200"
+                  href={`/services/${specialty.slug}`}
+                  className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-teal-200 cursor-pointer"
                 >
                   {/* Image */}
-                  <div className="relative h-56 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden">
                     <Image
                       src={specialty.image}
                       alt={specialty.title}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-teal-700 text-xs font-semibold rounded-full">
+                    <div className="absolute top-3 right-3">
+                      <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-teal-700 text-xs font-semibold rounded-full">
                         {specialty.category}
                       </span>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-600 transition-colors">
+                  <div className="p-5">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors">
                       {specialty.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-2">
                       {specialty.description}
                     </p>
-                    <Link
-                      href={`/services/${specialty.slug}`}
-                      className="inline-flex items-center gap-2 text-teal-600 font-semibold hover:gap-3 transition-all group"
-                    >
-                      FIND OUT MORE
-                      <FiArrowRight className="w-5 h-5" />
-                    </Link>
+                    <div className="inline-flex items-center gap-2 text-teal-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                      LEARN MORE
+                      <FiArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

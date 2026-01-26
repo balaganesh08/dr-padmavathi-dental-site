@@ -73,30 +73,36 @@ export default function Header() {
           </Link>
 
           {/* Right Side - Navigation & Actions */}
-          <div className="hidden lg:flex items-center space-x-3 xl:space-x-4 ml-auto">
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 ml-auto">
             {/* Desktop Navigation */}
-            <div className="flex items-center space-x-1 xl:space-x-2">
+            <div className="flex items-center space-x-0.5 xl:space-x-1">
               <a
                 href="/"
-                className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+                className="px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
               >
                 {t.nav.home}
               </a>
               <a
                 href="/specialties"
-                className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+                className="px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
               >
                 Specialties
               </a>
               <a
                 href="/about"
-                className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+                className="px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
               >
                 {t.nav.about}
               </a>
               <a
+                href="/testimonials"
+                className="px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+              >
+                {t.nav.testimonials}
+              </a>
+              <a
                 href="/contact"
-                className="px-4 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+                className="px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
               >
                 {t.nav.contact}
               </a>
@@ -176,6 +182,13 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {t.nav.about}
+            </a>
+            <a
+              href="/testimonials"
+              className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {t.nav.testimonials}
             </a>
             <a
               href="/contact"

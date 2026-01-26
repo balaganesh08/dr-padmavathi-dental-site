@@ -5,6 +5,7 @@ export interface Translations {
     home: string;
     about: string;
     services: string;
+    specialties: string;
     testimonials: string;
     gallery: string;
     contact: string;
@@ -74,6 +75,7 @@ export const translations: Record<Language, Translations> = {
       home: 'Home',
       about: 'About Doctor',
       services: 'Services',
+      specialties: 'Specialties',
       testimonials: 'Testimonials',
       gallery: 'Gallery',
       contact: 'Contact',
@@ -206,6 +208,7 @@ export const translations: Record<Language, Translations> = {
       home: 'హోమ్',
       about: 'డాక్టర్ గురించి',
       services: 'సేవలు',
+      specialties: 'ప్రత్యేకతలు',
       testimonials: 'సాక్ష్యాలు',
       gallery: 'గ్యాలరీ',
       contact: 'సంప్రదింపు',
