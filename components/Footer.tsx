@@ -8,13 +8,6 @@ import { FiInstagram, FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 export default function Footer() {
   const { t } = useLanguage();
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
       {/* Background decoration */}
@@ -77,28 +70,28 @@ export default function Footer() {
             <h4 className="text-base font-semibold mb-4 text-white">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               <li>
-                <button
-                  onClick={() => scrollToSection('home')}
+                <a
+                  href="/#home"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
                 >
                   {t.nav.home}
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('about')}
+                <a
+                  href="/about"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
                 >
                   {t.nav.about}
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('services')}
+                <a
+                  href="/#services"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
                 >
                   {t.nav.services}
-                </button>
+                </a>
               </li>
               <li>
                 <a
@@ -117,12 +110,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('testimonials')}
+                <a
+                  href="/testimonials"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
                 >
                   {t.nav.testimonials}
-                </button>
+                </a>
               </li>
               <li>
                 <a
@@ -133,12 +126,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('contact')}
+                <a
+                  href="/contact"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
                 >
                   {t.nav.contact}
-                </button>
+                </a>
               </li>
             </ul>
           </div>
