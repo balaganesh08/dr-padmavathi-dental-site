@@ -75,7 +75,35 @@ export default function Hero() {
     const v = videoRef.current;
     if (v) {
       v.muted = true;
-      v.play().catch(() => {});
+      
+      // Multiple attempts to play video
+      const attemptPlay = async (attempts = 0) => {
+        try {
+          await v.play();
+        } catch (error) {
+          if (attempts < 3) {
+            setTimeout(() => attemptPlay(attempts + 1), 1000);
+          }
+        }
+      };
+      
+      // Try to play immediately
+      attemptPlay();
+      
+      // Also try on user interaction
+      const handleUserInteraction = () => {
+        if (v.paused) {
+          v.play().catch(() => {});
+        }
+      };
+      
+      document.addEventListener('click', handleUserInteraction, { once: true });
+      document.addEventListener('touchstart', handleUserInteraction, { once: true });
+      
+      return () => {
+        document.removeEventListener('click', handleUserInteraction);
+        document.removeEventListener('touchstart', handleUserInteraction);
+      };
     }
 
     return () => window.removeEventListener('resize', updateControls);
@@ -165,7 +193,7 @@ export default function Hero() {
                   loop
                   playsInline
                   controls={showControls}
-                  preload="none"
+                  preload="metadata"
                 />
               </div>
             </div>

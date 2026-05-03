@@ -63,7 +63,7 @@ export default function BracesPage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+918501802222"
                   className="btn-primary inline-flex items-center gap-2"
                 >
                   <FiPhone className="w-5 h-5" />
@@ -219,11 +219,11 @@ export default function BracesPage() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="tel:+919876543210"
+              href="tel:+918501802222"
               className="bg-white text-teal-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all inline-flex items-center gap-2"
             >
               <FiPhone className="w-5 h-5" />
-              Call +91 98765 43210
+              Call +91 85018 02222
             </a>
             <Link
               href="/#contact"

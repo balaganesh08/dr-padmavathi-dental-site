@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code',
   },
   alternates: {
-    canonical: 'https://drpadmavathidental.com',
+    canonical: 'https://padmavathisdental.com',
   },
 };
 
@@ -40,17 +40,36 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Dr. Padmavathi Dental Hospital & Implant Centre',
-    image: 'https://drpadmavathidental.com/logo.png',
-    description: 'Premier dental clinic in Kakinada offering dental implants, braces, root canal, pediatric dentistry, and cosmetic treatments',
-    url: 'https://drpadmavathidental.com',
+    image: 'https://padmavathisdental.com/logo.png',
+    description: 'Best dentist in Kakinada offering dental implants, braces, root canal, pediatric dentistry, and cosmetic treatments. Top-rated dental clinic in Andhra Pradesh.',
+    url: 'https://padmavathisdental.com',
     telephone: '+91-8501802222',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Kakinada',
       addressRegion: 'Andhra Pradesh',
-      postalCode: '533001',
-      addressCountry: 'IN'
+      postalCode: '533005',
+      addressCountry: 'IN',
+      streetAddress: 'Door no..7-102, suruchi foods upstairs, 7-103, road, Thimmapuram, Timmapuram'
     },
+    areaServed: [
+      'Kakinada',
+      'Achampet',
+      'Timmapuram',
+      'Thimmapuram',
+      'East Godavari District',
+      'Andhra Pradesh',
+      'Rajahmundry',
+      'Amalapuram'
+    ],
+    additionalAddress: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Achampet',
+      addressRegion: 'Andhra Pradesh',
+      addressCountry: 'IN',
+      streetAddress: 'Near SRMT Mall, Achampet, Kakinada'
+    },
+    keywords: 'dentist Kakinada, dental clinic Kakinada, dental implants Kakinada, pediatric dentist Kakinada, braces Kakinada, root canal Kakinada, teeth whitening Kakinada, best dentist in Kakinada, dental hospital Kakinada, dentist Achampet, dental clinic Achampet, dentist near SRMT Mall, dental clinic near SRMT Mall, dentist Timmapuram, pediatric dentist Achampet',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -68,8 +87,13 @@ export default function RootLayout({
     priceRange: '$$',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '150'
+      ratingValue: '5.0',
+      reviewCount: '95'
+    },
+    hasCertification: {
+      '@type': 'Certification',
+      name: 'Women-Owned Business',
+      issuedBy: 'Self-Identified'
     }
   };
 

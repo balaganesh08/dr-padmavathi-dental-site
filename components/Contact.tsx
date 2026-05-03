@@ -19,15 +19,46 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setShowSuccess(true);
-      setFormData({ name: '', phone: '', email: '', message: '' });
+    try {
+      console.log('Submitting form with data:', formData);
       
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 5000);
-    }, 1000);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      
+      const data = await response.json();
+      console.log('Response data:', data);
+
+      if (data.success) {
+        console.log('Form submission successful, redirecting to thank you page');
+        // Track conversion in Google Analytics
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'form_submission', {
+            event_category: 'lead_generation',
+            event_label: 'contact_form',
+            value: 1,
+          });
+        }
+        
+        // Redirect to thank you page
+        window.location.href = '/thank-you';
+      } else {
+        console.error('Form submission failed:', data);
+        alert(`Failed: ${data.error || 'Unknown error'}. Check console for details.`);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (

@@ -31,13 +31,41 @@ export default function ContactPage() {
     setSubmitMessage('');
 
     try {
-      // Simulate form submission - Replace with actual API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      console.log('Submitting contact page form with data:', formData);
       
-      setSubmitMessage('Thank you for contacting us! We will get back to you soon.');
-      setFormData({ name: '', phone: '', email: '', message: '' });
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log('Contact page response status:', response.status);
+      console.log('Contact page response ok:', response.ok);
+      
+      const data = await response.json();
+      console.log('Contact page response data:', data);
+
+      if (data.success) {
+        console.log('Contact page form successful, redirecting to thank you page');
+        // Track conversion in Google Analytics
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'form_submission', {
+            event_category: 'lead_generation',
+            event_label: 'contact_page_form',
+            value: 1,
+          });
+        }
+        
+        // Redirect to thank you page
+        window.location.href = '/thank-you';
+      } else {
+        setSubmitMessage(`Failed: ${data.error || 'Unknown error'}. Check console for details.`);
+      }
     } catch (error) {
-      setSubmitMessage('Something went wrong. Please try calling us directly.');
+      console.error('Contact page form submission error:', error);
+      setSubmitMessage('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

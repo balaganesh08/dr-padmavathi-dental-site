@@ -15,11 +15,59 @@ export default function BookingSection() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert(language === 'en' ? 'Thank you! We will contact you soon.' : 'ధన్యవాదాలు! మేము త్వరలో మిమ్మల్ని సంప్రదిస్తాము.');
+    setIsSubmitting(true);
+    
+    try {
+      console.log('Submitting booking form with data:', formData);
+      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+          service: formData.service,
+          date: formData.date
+        }),
+      });
+
+      console.log('Booking form response status:', response.status);
+      console.log('Booking form response ok:', response.ok);
+      
+      const data = await response.json();
+      console.log('Booking form response data:', data);
+
+      if (data.success) {
+        console.log('Booking form successful, redirecting to thank you page');
+        // Track conversion in Google Analytics
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'form_submission', {
+            event_category: 'lead_generation',
+            event_label: 'booking_form',
+            value: 1,
+          });
+        }
+        
+        // Redirect to thank you page
+        window.location.href = '/thank-you';
+      } else {
+        console.error('Booking form failed:', data);
+        alert(`Failed: ${data.error || 'Unknown error'}. Check console for details.`);
+      }
+    } catch (error) {
+      console.error('Booking form submission error:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -76,8 +124,8 @@ export default function BookingSection() {
                     <p className="text-sm text-gray-600 mb-1">
                       {language === 'en' ? 'Call Us' : 'మమ్మల్ని కాల్ చేయండి'}
                     </p>
-                    <a href="tel:+919876543210" className="text-lg font-semibold text-gray-900 hover:text-teal-600">
-                      +91 98765 43210
+                    <a href="tel:+918501802222" className="text-lg font-semibold text-gray-900 hover:text-teal-600">
+                      +91 85018 02222
                     </a>
                   </div>
                 </div>
@@ -233,9 +281,13 @@ export default function BookingSection() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-teal-600 to-green-600 text-white py-4 rounded-lg font-semibold hover:from-teal-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-teal-600 to-green-600 text-white py-4 rounded-lg font-semibold hover:from-teal-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                {language === 'en' ? 'Book Appointment' : 'అపాయింట్‌మెంట్ బుక్ చేయండి'}
+                {isSubmitting 
+                  ? (language === 'en' ? 'Booking...' : 'బుక్ చేస్తోంది...')
+                  : (language === 'en' ? 'Book Appointment' : 'అపాయింట్‌మెంట్ బుక్ చేయండి')
+                }
               </button>
             </form>
           </div>

@@ -269,10 +269,10 @@ export default function SpecialtiesPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="tel:+919876543210"
+                href="tel:+918501802222"
                 className="btn-primary"
               >
-                Call +91 98765 43210
+                Call +91 85018 02222
               </a>
               <Link
                 href="/#contact"
