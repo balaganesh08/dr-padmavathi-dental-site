@@ -3,8 +3,18 @@ import { Resend } from 'resend';
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if API key is available
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is not set in environment variables');
+      return NextResponse.json(
+        { error: 'Server config error: RESEND_API_KEY missing' },
+        { status: 500 }
+      );
+    }
+    
     // Initialize Resend inside the function to avoid module-level issues
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(apiKey);
     
     const body = await request.json();
     const { name, phone, email, message } = body;
@@ -36,7 +46,7 @@ export async function POST(request: NextRequest) {
 
     // Send email to clinic
     const emailData = {
-      from: 'noreply@padmavathisdental.com',
+      from: 'onboarding@resend.dev',
       to: 'shivaganeshram7@gmail.com', // Clinic email for lead notifications
       subject: `New Dental Appointment Request from ${name}`,
       html: `
@@ -92,7 +102,7 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email to patient
     const confirmationData = {
-      from: 'noreply@padmavathisdental.com',
+      from: 'onboarding@resend.dev',
       to: email,
       subject: 'Thank you for contacting Dr. Padmavathi Dental Clinic',
       html: `
@@ -162,16 +172,16 @@ export async function POST(request: NextRequest) {
     });
     
     // Check if it's a Resend API error
-    if (errorMessage.includes('Resend')) {
+    if (errorMessage.includes('Resend') || errorMessage.includes('API key') || errorMessage.includes('Unauthorized')) {
       console.error('Resend API Error - Check API key and email configuration');
       return NextResponse.json(
-        { error: 'Email service configuration error. Please contact support.' },
+        { error: 'Email service configuration error. Please contact support.', details: errorMessage },
         { status: 500 }
       );
     }
     
     return NextResponse.json(
-      { error: 'Failed to send message. Please try again.' },
+      { error: 'Failed to send message. Please try again.', details: errorMessage },
       { status: 500 }
     );
   }
