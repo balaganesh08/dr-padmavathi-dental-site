@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+// Fallback API key for debugging - REMOVE AFTER FIXING ENV VARIABLES
+const FALLBACK_API_KEY = 're_QButf84t_GgYJ8anPNpQ62SbT6eBnrsc4';
+
 export async function POST(request: NextRequest) {
   try {
-    // Check if API key is available
-    const apiKey = process.env.RESEND_API_KEY;
+    // Check if API key is available - use env variable first, fallback if missing
+    const apiKey = process.env.RESEND_API_KEY || FALLBACK_API_KEY;
     if (!apiKey) {
       console.error('RESEND_API_KEY is not set in environment variables');
       return NextResponse.json(
@@ -46,7 +49,7 @@ export async function POST(request: NextRequest) {
 
     // Send email to clinic
     const emailData = {
-      from: 'onboarding@resend.dev',
+      from: 'noreply@padmavathisdental.com',
       to: 'shivaganeshram7@gmail.com', // Clinic email for lead notifications
       subject: `New Dental Appointment Request from ${name}`,
       html: `
@@ -102,7 +105,7 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email to patient
     const confirmationData = {
-      from: 'onboarding@resend.dev',
+      from: 'noreply@padmavathisdental.com',
       to: email,
       subject: 'Thank you for contacting Dr. Padmavathi Dental Clinic',
       html: `
