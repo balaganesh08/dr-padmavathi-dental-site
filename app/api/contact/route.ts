@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
 
     // Send email to clinic
     const emailData = {
-      from: 'onboarding@resend.dev',
+      from: 'noreply@padmavathisdental.com',
       to: 'shivaganeshram7@gmail.com', // Clinic email for lead notifications
       subject: `New Dental Appointment Request from ${name}`,
       html: `
@@ -92,7 +92,7 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email to patient
     const confirmationData = {
-      from: 'onboarding@resend.dev',
+      from: 'noreply@padmavathisdental.com',
       to: email,
       subject: 'Thank you for contacting Dr. Padmavathi Dental Clinic',
       html: `
