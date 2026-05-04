@@ -66,6 +66,7 @@ export default function Hero() {
   // Video behavior: reduce mobile height and ensure autoplay works; show controls on desktop only
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [showControls, setShowControls] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     const updateControls = () => setShowControls(window.innerWidth >= 1024);
@@ -73,40 +74,58 @@ export default function Hero() {
     window.addEventListener('resize', updateControls);
 
     const v = videoRef.current;
-    if (v) {
-      v.muted = true;
-      
-      // Multiple attempts to play video
-      const attemptPlay = async (attempts = 0) => {
-        try {
-          await v.play();
-        } catch (error) {
-          if (attempts < 3) {
-            setTimeout(() => attemptPlay(attempts + 1), 1000);
-          }
-        }
-      };
-      
-      // Try to play immediately
-      attemptPlay();
-      
-      // Also try on user interaction
-      const handleUserInteraction = () => {
-        if (v.paused) {
-          v.play().catch(() => {});
-        }
-      };
-      
-      document.addEventListener('click', handleUserInteraction, { once: true });
-      document.addEventListener('touchstart', handleUserInteraction, { once: true });
-      
-      return () => {
-        document.removeEventListener('click', handleUserInteraction);
-        document.removeEventListener('touchstart', handleUserInteraction);
-      };
-    }
+    if (!v) return;
 
-    return () => window.removeEventListener('resize', updateControls);
+    v.muted = true;
+    v.playsInline = true;
+    v.autoplay = true;
+    v.loop = true;
+
+    const attemptPlay = async (delay = 0) => {
+      if (!videoRef.current) return;
+      if (delay > 0) await new Promise(r => setTimeout(r, delay));
+      try {
+        await videoRef.current.play();
+        setVideoLoaded(true);
+      } catch {
+        // Retry with increasing delay
+        if (delay < 8000) {
+          attemptPlay(delay === 0 ? 500 : delay * 2);
+        }
+      }
+    };
+
+    // Wait for enough data to play before attempting
+    const handleCanPlay = () => {
+      attemptPlay(100);
+    };
+
+    const handleLoadedData = () => {
+      attemptPlay(0);
+    };
+
+    // Also try on user interaction as fallback
+    const handleUserInteraction = () => {
+      if (videoRef.current && videoRef.current.paused) {
+        videoRef.current.play().catch(() => {});
+      }
+    };
+
+    v.addEventListener('canplay', handleCanPlay, { once: true });
+    v.addEventListener('loadeddata', handleLoadedData, { once: true });
+    document.addEventListener('click', handleUserInteraction, { once: true });
+    document.addEventListener('touchstart', handleUserInteraction, { once: true });
+
+    // Immediate attempt in case video is already cached
+    attemptPlay(300);
+
+    return () => {
+      v.removeEventListener('canplay', handleCanPlay);
+      v.removeEventListener('loadeddata', handleLoadedData);
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('touchstart', handleUserInteraction);
+      window.removeEventListener('resize', updateControls);
+    };
   }, []);
 
   return (
@@ -193,7 +212,7 @@ export default function Hero() {
                   loop
                   playsInline
                   controls={showControls}
-                  preload="metadata"
+                  preload="auto"
                 />
               </div>
             </div>
