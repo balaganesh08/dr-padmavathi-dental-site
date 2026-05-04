@@ -205,8 +205,8 @@ export default function Hero() {
                   controls={showControls}
                   preload="auto"
                 >
-                  <source src="/videos/clinic.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
-                  <source src="/videos/clinic.webm" type="video/webm" />
+                  <source src="https://padmavathis-dental-clinic-media.s3.ap-south-1.amazonaws.com/clinic.mp4" type="video/mp4" />
+                  <source src="/videos/clinic.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
