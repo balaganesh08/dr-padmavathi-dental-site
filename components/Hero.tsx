@@ -74,78 +74,48 @@ export default function Hero() {
     window.addEventListener('resize', updateControls);
 
     const v = videoRef.current;
+    console.log('Video element found:', !!v);
     if (!v) return;
 
+    console.log('Video src:', v.src);
+    console.log('Video readyState:', v.readyState);
+
+    // Set essential attributes for autoplay
     v.muted = true;
-    v.playsInline = true;
-    v.autoplay = true;
     v.loop = true;
-    v.setAttribute('muted', '');
-    v.setAttribute('playsinline', '');
-
-    const attemptPlay = async (delay = 0) => {
-      if (!videoRef.current) return;
-      if (delay > 0) await new Promise(r => setTimeout(r, delay));
-      try {
-        await videoRef.current.play();
-        setVideoLoaded(true);
-        console.log('Video autoplay successful');
-      } catch (error) {
-        console.log('Video autoplay failed, retrying...', error);
-        // Retry with increasing delay
-        if (delay < 8000) {
-          attemptPlay(delay === 0 ? 500 : delay * 2);
-        }
+    
+    // Simple autoplay attempt
+    const playVideo = () => {
+      console.log('Attempting to play video...');
+      if (videoRef.current) {
+        videoRef.current.play().then(() => {
+          setVideoLoaded(true);
+          console.log('Video playing successfully');
+        }).catch(error => {
+          console.log('Autoplay blocked:', error.message);
+          // Add click handler to play on first interaction
+          const playOnClick = () => {
+            if (videoRef.current && videoRef.current.paused) {
+              videoRef.current.play().then(() => setVideoLoaded(true));
+            }
+          };
+          document.addEventListener('click', playOnClick, { once: true });
+          document.addEventListener('touchstart', playOnClick, { once: true });
+        });
       }
     };
 
-    // Multiple event listeners to catch all possible moments
-    const events = ['canplay', 'loadeddata', 'loadedmetadata', 'canplaythrough'];
-    const handleVideoReady = () => {
-      console.log('Video ready event fired');
-      attemptPlay(100);
-    };
+    // Try to play when video is ready
+    v.addEventListener('loadeddata', () => {
+      console.log('Video loadeddata event fired');
+      playVideo();
+    }, { once: true });
 
-    events.forEach(event => {
-      v.addEventListener(event, handleVideoReady, { once: true });
-    });
-
-    // Aggressive user interaction detection
-    const handleUserInteraction = () => {
-      if (videoRef.current && videoRef.current.paused) {
-        videoRef.current.play().catch(() => {});
-      }
-    };
-
-    // Add multiple interaction listeners
-    document.addEventListener('click', handleUserInteraction, { once: true });
-    document.addEventListener('touchstart', handleUserInteraction, { once: true });
-    document.addEventListener('scroll', handleUserInteraction, { once: true });
-    document.addEventListener('keydown', handleUserInteraction, { once: true });
-
-    // Immediate attempts
-    attemptPlay(100);
-    attemptPlay(500);
-    attemptPlay(1000);
-    attemptPlay(2000);
-
-    // Visibility change handler - play when tab becomes visible
-    const handleVisibilityChange = () => {
-      if (!document.hidden && videoRef.current && videoRef.current.paused) {
-        videoRef.current.play().catch(() => {});
-      }
-    };
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    v.addEventListener('error', (e) => {
+      console.error('Video error:', e);
+    }, { once: true });
 
     return () => {
-      events.forEach(event => {
-        v.removeEventListener(event, handleVideoReady);
-      });
-      document.removeEventListener('click', handleUserInteraction);
-      document.removeEventListener('touchstart', handleUserInteraction);
-      document.removeEventListener('scroll', handleUserInteraction);
-      document.removeEventListener('keydown', handleUserInteraction);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('resize', updateControls);
     };
   }, []);
