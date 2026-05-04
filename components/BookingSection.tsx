@@ -138,8 +138,8 @@ export default function BookingSection() {
                     <p className="text-sm text-gray-600 mb-1">
                       {language === 'en' ? 'Email Us' : 'ఈమెయిల్ చేయండి'}
                     </p>
-                    <a href="mailto:info@drpadmavathi.com" className="text-lg font-semibold text-gray-900 hover:text-teal-600">
-                      info@drpadmavathi.com
+                    <a href="mailto:dr.padmavathi25@gmail.com" className="text-lg font-semibold text-gray-900 hover:text-teal-600">
+                      dr.padmavathi25@gmail.com
                     </a>
                   </div>
                 </div>

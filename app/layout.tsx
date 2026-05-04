@@ -54,7 +54,7 @@ export default function RootLayout({
     },
     areaServed: [
       'Kakinada',
-      'Achampet',
+      'Achampeta',
       'Timmapuram',
       'Thimmapuram',
       'East Godavari District',
@@ -64,12 +64,12 @@ export default function RootLayout({
     ],
     additionalAddress: {
       '@type': 'PostalAddress',
-      addressLocality: 'Achampet',
+      addressLocality: 'Achampeta',
       addressRegion: 'Andhra Pradesh',
       addressCountry: 'IN',
-      streetAddress: 'Near SRMT Mall, Achampet, Kakinada'
+      streetAddress: 'Near SRMT Mall, Achampeta, Kakinada'
     },
-    keywords: 'dentist Kakinada, dental clinic Kakinada, dental implants Kakinada, pediatric dentist Kakinada, braces Kakinada, root canal Kakinada, teeth whitening Kakinada, best dentist in Kakinada, dental hospital Kakinada, dentist Achampet, dental clinic Achampet, dentist near SRMT Mall, dental clinic near SRMT Mall, dentist Timmapuram, pediatric dentist Achampet',
+    keywords: 'dentist Kakinada, dental clinic Kakinada, dental implants Kakinada, pediatric dentist Kakinada, braces Kakinada, root canal Kakinada, teeth whitening Kakinada, best dentist in Kakinada, dental hospital Kakinada, dentist Achampeta, dental clinic Achampeta, dentist near SRMT Mall, dental clinic near SRMT Mall, dentist Timmapuram, pediatric dentist Achampeta',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',

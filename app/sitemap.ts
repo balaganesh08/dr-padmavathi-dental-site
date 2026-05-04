@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://drpadmavathidental.com';
+  const baseUrl = 'https://padmavathisdental.com';
   
   // Main pages
   const routes = [
@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/gallery',
     '/blog',
     '/contact',
+    '/testimonials',
+    '/thank-you',
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
