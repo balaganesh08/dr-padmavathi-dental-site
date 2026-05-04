@@ -80,6 +80,8 @@ export default function Hero() {
     v.playsInline = true;
     v.autoplay = true;
     v.loop = true;
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
 
     const attemptPlay = async (delay = 0) => {
       if (!videoRef.current) return;
@@ -87,7 +89,9 @@ export default function Hero() {
       try {
         await videoRef.current.play();
         setVideoLoaded(true);
-      } catch {
+        console.log('Video autoplay successful');
+      } catch (error) {
+        console.log('Video autoplay failed, retrying...', error);
         // Retry with increasing delay
         if (delay < 8000) {
           attemptPlay(delay === 0 ? 500 : delay * 2);
@@ -95,35 +99,53 @@ export default function Hero() {
       }
     };
 
-    // Wait for enough data to play before attempting
-    const handleCanPlay = () => {
+    // Multiple event listeners to catch all possible moments
+    const events = ['canplay', 'loadeddata', 'loadedmetadata', 'canplaythrough'];
+    const handleVideoReady = () => {
+      console.log('Video ready event fired');
       attemptPlay(100);
     };
 
-    const handleLoadedData = () => {
-      attemptPlay(0);
-    };
+    events.forEach(event => {
+      v.addEventListener(event, handleVideoReady, { once: true });
+    });
 
-    // Also try on user interaction as fallback
+    // Aggressive user interaction detection
     const handleUserInteraction = () => {
       if (videoRef.current && videoRef.current.paused) {
         videoRef.current.play().catch(() => {});
       }
     };
 
-    v.addEventListener('canplay', handleCanPlay, { once: true });
-    v.addEventListener('loadeddata', handleLoadedData, { once: true });
+    // Add multiple interaction listeners
     document.addEventListener('click', handleUserInteraction, { once: true });
     document.addEventListener('touchstart', handleUserInteraction, { once: true });
+    document.addEventListener('scroll', handleUserInteraction, { once: true });
+    document.addEventListener('keydown', handleUserInteraction, { once: true });
 
-    // Immediate attempt in case video is already cached
-    attemptPlay(300);
+    // Immediate attempts
+    attemptPlay(100);
+    attemptPlay(500);
+    attemptPlay(1000);
+    attemptPlay(2000);
+
+    // Visibility change handler - play when tab becomes visible
+    const handleVisibilityChange = () => {
+      if (!document.hidden && videoRef.current && videoRef.current.paused) {
+        videoRef.current.play().catch(() => {});
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
-      v.removeEventListener('canplay', handleCanPlay);
-      v.removeEventListener('loadeddata', handleLoadedData);
+      events.forEach(event => {
+        v.removeEventListener(event, handleVideoReady);
+      });
       document.removeEventListener('click', handleUserInteraction);
       document.removeEventListener('touchstart', handleUserInteraction);
+      document.removeEventListener('scroll', handleUserInteraction);
+      document.removeEventListener('keydown', handleUserInteraction);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('resize', updateControls);
     };
   }, []);
