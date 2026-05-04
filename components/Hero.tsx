@@ -196,7 +196,6 @@ export default function Hero() {
               <div className="relative h-56 sm:h-72 lg:aspect-[16/9] lg:h-auto">
                 <video
                   ref={videoRef}
-                  src="/videos/clinic.mp4"
                   poster="/Dr_Padmavathi.JPG"
                   className="w-full h-full object-cover"
                   autoPlay
@@ -205,7 +204,11 @@ export default function Hero() {
                   playsInline
                   controls={showControls}
                   preload="auto"
-                />
+                >
+                  <source src="/videos/clinic.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
+                  <source src="/videos/clinic.webm" type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
 
