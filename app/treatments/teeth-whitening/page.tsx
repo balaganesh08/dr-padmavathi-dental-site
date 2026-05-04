@@ -121,7 +121,7 @@ export default function TeethWhiteningPage() {
                     Call 8501802222
                   </a>
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className="btn-secondary inline-flex items-center gap-2"
                   >
                     <FiCalendar className="w-5 h-5" />
@@ -374,7 +374,7 @@ export default function TeethWhiteningPage() {
                 Call 8501802222
               </a>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-orange-600 transition-all"
               >
                 Book Free Consultation

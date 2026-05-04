@@ -226,7 +226,7 @@ export default function BracesPage() {
               Call +91 85018 02222
             </a>
             <Link
-              href="/#contact"
+              href="/contact"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-teal-600 transition-all"
             >
               Book Free Consultation

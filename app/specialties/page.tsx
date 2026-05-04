@@ -275,7 +275,7 @@ export default function SpecialtiesPage() {
                 Call +91 85018 02222
               </a>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="btn-secondary"
               >
                 Book Appointment

@@ -179,7 +179,7 @@ export default function BlogPage() {
               >
                 Call 8501802222
               </a>
-              <Link href="/#contact" className="btn-secondary">
+              <Link href="/contact" className="btn-secondary">
                 Book Appointment
               </Link>
             </div>

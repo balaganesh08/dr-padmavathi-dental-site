@@ -60,7 +60,7 @@ export default function ThankYouPage() {
               Schedule your visit at your convenience. We offer flexible timings including evening appointments.
             </p>
             <Link 
-              href="/#contact" 
+              href="/contact" 
               className="inline-flex items-center bg-white text-teal-600 border-2 border-teal-600 px-6 py-3 rounded-xl font-semibold hover:bg-teal-50 transition-all"
             >
               <FiCalendar className="mr-2" />
