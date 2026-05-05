@@ -164,7 +164,7 @@ export default function ServicePageTemplate({
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <span className="text-3xl font-bold text-teal-600">10K+</span>
+                  <span className="text-3xl font-bold text-teal-600">4200+</span>
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Happy Patients</h3>
                 <p className="text-gray-600 text-sm">Trust & satisfaction</p>

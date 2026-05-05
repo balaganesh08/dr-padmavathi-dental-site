@@ -313,7 +313,7 @@ export default function ContactPage() {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl h-96 bg-gray-200">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30589.123456789!2d82.23456789!3d16.98765432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDU5JzE1LjYiTiA4MsKwMTQnMDQuNCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3815.113340968257!2d82.24584947461918!3d17.018109713339335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3829dff1a629f3%3A0xcf412cfd01b210e7!2sDr.padmavathi%20Dental%20Hospital%20and%20Implant%20Centre!5e0!3m2!1sen!2sin!4v1777996760127!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

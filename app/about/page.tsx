@@ -175,7 +175,7 @@ export default function AboutDoctorPage() {
                         <div className="text-xs text-gray-600 mt-1">Smiles</div>
                       </div>
                       <div className="bg-gradient-to-br from-teal-50 to-green-50 rounded-2xl p-4 text-center">
-                        <div className="text-3xl font-bold gradient-text">10K+</div>
+                        <div className="text-3xl font-bold gradient-text">4200+</div>
                         <div className="text-xs text-gray-600 mt-1">Patients</div>
                       </div>
                     </div>
