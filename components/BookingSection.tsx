@@ -166,7 +166,7 @@ export default function BookingSection() {
                 <div className="space-y-2 text-sm text-gray-600">
                   <p className="flex justify-between">
                     <span>{language === 'en' ? 'Monday - Saturday' : 'సోమవారం - శనివారం'}</span>
-                    <span className="font-semibold">5:00 PM - 9:00 PM</span>
+                    <span className="font-semibold">10:00 AM - 1:00 PM & 5:00 PM - 9:00 PM</span>
                   </p>
                   <p className="flex justify-between">
                     <span>{language === 'en' ? 'Sunday' : 'ఆదివారం'}</span>

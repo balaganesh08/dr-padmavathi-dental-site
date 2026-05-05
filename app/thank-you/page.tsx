@@ -112,7 +112,7 @@ export default function ThankYouPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Visit Our Clinic in Kakinada</h3>
             <div className="text-gray-600 space-y-2">
               <p><strong>Address:</strong> Door no..7-102, suruchi foods upstairs, 7-103, road, Thimmapuram, Timmapuram, Kakinada</p>
-              <p><strong>Timings:</strong> Monday - Saturday: 5:00 PM - 9:00 PM | Sunday: 10:00 AM - 1:00 PM</p>
+              <p><strong>Timings:</strong> Monday - Saturday: 10:00 AM - 1:00 PM & 5:00 PM - 9:00 PM | Sunday: 10:00 AM - 1:00 PM</p>
               <p><strong>Phone:</strong> 85018 02222</p>
             </div>
           </div>

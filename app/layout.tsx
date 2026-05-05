@@ -14,9 +14,12 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: 'Best Dentist in Kakinada | Dr. Padmavathi Dental Clinic | Dental Implants & Pediatric Dentistry',
-  description: 'Top-rated dental clinic in Kakinada offering dental implants, braces, root canal, teeth whitening & kids dentistry. Dr. Padmavathi - MDS, FAGE Specialist Pedodontist. 2200+ Happy Patients. Call 8501802222',
+  description: 'Top-rated dental clinic in Kakinada offering dental implants, braces, root canal, teeth whitening & kids dentistry. Dr. Padmavathi - MDS, FAGE Specialist Pedodontist. 4200+ Happy Patients. Call 8501802222',
   keywords: 'best dentist Kakinada, dental clinic Kakinada, dental implants Kakinada, pediatric dentist Kakinada, kids dentistry Kakinada, teeth whitening Kakinada, braces Kakinada, root canal Kakinada, cosmetic dentistry Kakinada, Dr Padmavathi dentist, dental hospital Kakinada',
   authors: [{ name: 'Dr. Padmavathi' }],
+  icons: {
+    icon: '/favicon.ico',
+  },
   openGraph: {
     title: 'Best Dentist in Kakinada | Dr. Padmavathi Dental Clinic',
     description: 'Expert dental care in Kakinada - Implants, Braces, Root Canal, Kids Dentistry & More. 8+ Years Experience. Book Now: 8501802222',

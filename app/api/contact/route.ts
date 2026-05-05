@@ -137,7 +137,7 @@ export async function POST(request: NextRequest) {
               Door no..7-102, suruchi foods upstairs, 7-103, road, Thimmapuram, Timmapuram, Kakinada, Andhra Pradesh 533005</p>
               
               <p style="margin-top: 10px;"><strong>Timings:</strong><br>
-              Monday - Saturday: 5:00 PM - 9:00 PM<br>
+              Monday - Saturday: 10:00 AM - 1:00 PM & 5:00 PM - 9:00 PM<br>
               Sunday: 10:00 AM - 1:00 PM</p>
             </div>
           </div>

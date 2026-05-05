@@ -724,7 +724,7 @@ const blogPosts: Record<string, BlogPost> = {
             'Personalized treatment plan based on your needs',
             'Expert guidance from Dr. Padmavathi with 8+ years experience',
             'State-of-the-art technology and techniques',
-            '2200+ happy patients with successful treatments'
+            '4200+ happy patients with successful treatments'
           ]
         },
         {
@@ -1226,7 +1226,7 @@ const blogPosts: Record<string, BlogPost> = {
           points: [
             'Over 8+ years of specialized experience with BDS, MDS, FAGE qualifications',
             'Expert Pediatric Dentist (Pedodontist) specializing in children\'s dental care',
-            '2200+ happy patients with successful treatments',
+            '4200+ happy patients with successful treatments',
             'Comprehensive range of 17+ dental services under one roof',
             'Advanced technology including laser dentistry and digital diagnostics',
             'Flexible timings: Weekdays 5-9 PM, Sundays 10 AM-2 PM',

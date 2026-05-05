@@ -145,7 +145,7 @@ export default function RootCanalPage() {
                     <FaStar className="w-6 h-6 text-yellow-600" />
                   </div>
                   <div>
-                    <div className="font-bold text-gray-900">2200+ Happy Patients</div>
+                    <div className="font-bold text-gray-900">4200+ Happy Patients</div>
                     <div className="text-sm text-gray-600">Successful Treatments</div>
                   </div>
                 </div>
@@ -292,7 +292,7 @@ export default function RootCanalPage() {
                   <div className="text-xl opacity-90">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-5xl font-bold mb-2">2200+</div>
+                  <div className="text-5xl font-bold mb-2">4200+</div>
                   <div className="text-xl opacity-90">Happy Patients</div>
                 </div>
                 <div className="text-center">

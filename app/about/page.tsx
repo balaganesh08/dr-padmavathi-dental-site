@@ -13,7 +13,7 @@ export default function AboutDoctorPage() {
   const qualifications = [
     {
       degree: 'BDS',
-      title: 'Bachelor of Dental Surgery',
+      title: 'Bachelor of Dental Surgery - Government Dental College and Hospital, Vijayawada',
       icon: FaGraduationCap,
     },
     {
@@ -42,12 +42,12 @@ export default function AboutDoctorPage() {
   const achievements = [
     {
       icon: FiSmile,
-      number: '2200+',
+      number: '4200+',
       label: 'Smile Makeovers',
     },
     {
       icon: FiUsers,
-      number: '10,000+',
+      number: '4200+',
       label: 'Happy Patients',
     },
     {
@@ -171,7 +171,7 @@ export default function AboutDoctorPage() {
                         <div className="text-xs text-gray-600 mt-1">Years Exp.</div>
                       </div>
                       <div className="bg-gradient-to-br from-teal-50 to-green-50 rounded-2xl p-4 text-center">
-                        <div className="text-3xl font-bold gradient-text">2200+</div>
+                        <div className="text-3xl font-bold gradient-text">4200+</div>
                         <div className="text-xs text-gray-600 mt-1">Smiles</div>
                       </div>
                       <div className="bg-gradient-to-br from-teal-50 to-green-50 rounded-2xl p-4 text-center">
@@ -422,9 +422,9 @@ export default function AboutDoctorPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Schedule Your Appointment Today
             </h2>
-            <p className="text-xl text-white/90 mb-8">
-              Experience personalized dental care with Dr. Padmavathi Devi
-            </p>
+            <p className="text-gray-600 leading-relaxed mb-8">
+            With over 8 years of experience in pediatric dentistry and advanced dental procedures, Dr. Padmavathi Devi has treated 4200+ happy patients. Her patient-focused approach ensures comfortable treatments and beautiful smiles for patients of all ages.
+          </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"

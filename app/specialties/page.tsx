@@ -195,7 +195,7 @@ export default function SpecialtiesPage() {
               {/* Trust Indicators */}
               <div className="flex flex-wrap items-center justify-center gap-8 mt-12">
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">2000+</div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">4000+</div>
                   <div className="text-teal-100 text-sm">Happy Patients</div>
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-white/30"></div>

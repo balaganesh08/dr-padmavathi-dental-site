@@ -10,7 +10,7 @@ export default function Stats() {
   const stats = [
     {
       icon: FaUserFriends,
-      number: '2200+',
+      number: '4200+',
       label: language === 'en' ? 'Happy Patients' : 'సంతృప్తి చెందిన రోగులు',
     },
     {
@@ -20,13 +20,13 @@ export default function Stats() {
     },
     {
       icon: FaTooth,
-      number: '3500+',
+      number: '4000+',
       label: language === 'en' ? 'Smile Makeovers' : 'స్మైల్ మేక్ఓవర్స్',
     },
     {
       icon: FaClock,
-      number: '7',
-      label: language === 'en' ? 'Days Open' : 'రోజులు తెరిచి ఉంటుంది',
+      number: '1500+',
+      label: language === 'en' ? 'Kids Treated' : 'పిల్లలకు చికిత్స',
     },
   ];
 

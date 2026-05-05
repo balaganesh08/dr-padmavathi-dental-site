@@ -60,7 +60,7 @@ export default function About() {
                   <FiSmile className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
-                  <div className="text-xl font-bold text-gray-900">2200+</div>
+                  <div className="text-xl font-bold text-gray-900">4200+</div>
                   <div className="text-xs text-gray-500">Smile Makeovers</div>
                 </div>
               </div>

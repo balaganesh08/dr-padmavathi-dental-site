@@ -179,12 +179,12 @@ export default function Hero() {
                 <div className="text-xs text-gray-500 font-medium">Years Experience</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">2200+</div>
-                <div className="text-xs text-gray-500 font-medium">Smile Makeovers</div>
+                <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">4200+</div>
+                <div className="text-xs text-gray-500 font-medium">Happy Patients</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">16</div>
-                <div className="text-xs text-gray-500 font-medium">Services</div>
+                <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">4000+</div>
+                <div className="text-xs text-gray-500 font-medium">Smile Makeovers</div>
               </div>
             </div>
           </div>
@@ -203,7 +203,7 @@ export default function Hero() {
                   loop
                   playsInline
                   controls={showControls}
-                  preload="auto"
+                  preload="metadata"
                 >
                   <source src="https://padmavathis-dental-clinic-media.s3.ap-south-1.amazonaws.com/clinic.mp4" type="video/mp4" />
                   <source src="/videos/clinic.mp4" type="video/mp4" />
