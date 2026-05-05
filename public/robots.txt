@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://padmavathisdental.com/sitemap.xml
+
+# Block common non-content files
+Disallow: /api/
+Disallow: /_next/
+Disallow: /favicon.ico
+Disallow: /robots.txt
+
+# Allow search engines to crawl important pages
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /treatments
+Allow: /blog
+Allow: /gallery
+Allow: /testimonials
+Allow: /specialties
+
+# Crawl delay (optional)
+Crawl-delay: 1
