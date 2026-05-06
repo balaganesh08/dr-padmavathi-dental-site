@@ -21,7 +21,7 @@ export const servicesData: Record<string, ServiceData> = {
   braces: {
     title: 'Dental Braces in Kakinada',
     subtitle: 'Straighten your teeth with traditional metal or ceramic braces',
-    heroImage: '/services/Braces.jpg',
+    heroImage: '/services/1/braces.jpg',
     description: 'Dental braces are orthodontic devices used to straighten and align teeth, correct bite issues, and improve overall oral health. At Dr. Padmavathi\'s Dental Clinic in Kakinada, we offer both traditional metal braces and aesthetic ceramic braces tailored to your specific needs. Our experienced orthodontic team ensures comfortable treatment with excellent results.',
     benefits: [
       'Straightens crooked and misaligned teeth effectively',
@@ -52,12 +52,12 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'You may experience mild discomfort for a few days after braces are placed or adjusted. This is normal and can be managed with over-the-counter pain relievers. The discomfort typically subsides within a week.',
       },
       {
-        question: 'What\'s the difference between metal and ceramic braces?',
+        question: 'What is the difference between metal and ceramic braces?',
         answer: 'Metal braces are more visible but highly effective and durable. Ceramic braces are tooth-colored and blend with your teeth for a more aesthetic appearance. Both work equally well; the choice depends on your preference.',
       },
       {
         question: 'How much do braces cost in Kakinada?',
-        answer: 'The cost varies based on the type of braces and treatment complexity. We offer affordable pricing and flexible payment plans. Contact us at 85018 02222 for a personalized quote.',
+        answer: 'The cost varies based on type of braces and treatment complexity. We offer affordable pricing and flexible payment plans. Contact us at 8501802222 for a personalized quote.',
       },
     ],
     metaTitle: 'Dental Braces in Kakinada | Metal & Ceramic Braces | Dr. Padmavathi',
@@ -68,8 +68,8 @@ export const servicesData: Record<string, ServiceData> = {
   bridge: {
     title: 'Dental Bridge in Kakinada',
     subtitle: 'Replace missing teeth with permanent dental bridges',
-    heroImage: '/services/dental-bridge.jpg',
-    description: 'A dental bridge is a fixed prosthetic device used to replace one or more missing teeth. It literally "bridges" the gap created by missing teeth by anchoring to adjacent natural teeth or implants. At our Kakinada clinic, we provide high-quality, natural-looking dental bridges that restore both function and aesthetics to your smile.',
+    heroImage: '/services/1/bridge.jpg',
+    description: 'A dental bridge is a fixed prosthetic device used to replace one or more missing teeth. It literally "bridges the gap" created by missing teeth by anchoring to adjacent natural teeth or implants. At our Kakinada clinic, we provide high-quality, natural-looking dental bridges that restore both function and aesthetics to your smile.',
     benefits: [
       'Restores ability to chew and speak properly',
       'Maintains facial shape and prevents bone loss',
@@ -103,7 +103,7 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'Brush twice daily, floss carefully around the bridge using special floss threaders, avoid hard or sticky foods, and visit your dentist regularly for checkups.',
       },
       {
-        question: 'What\'s the cost of a dental bridge in Kakinada?',
+        question: 'What is the cost of a dental bridge in Kakinada?',
         answer: 'Cost depends on the number of teeth being replaced and materials used. We offer competitive pricing in Kakinada. Contact us for a detailed quote.',
       },
     ],
@@ -115,7 +115,7 @@ export const servicesData: Record<string, ServiceData> = {
   'clear-aligners': {
     title: 'Clear Aligners in Kakinada',
     subtitle: 'Invisible orthodontic treatment for a perfect smile',
-    heroImage: '/services/clear-aligners.jpg',
+    heroImage: '/services/1/Clear-aligner.jpg',
     description: 'Clear aligners are a modern, virtually invisible alternative to traditional braces. These custom-made, removable trays gradually shift your teeth into the desired position. Perfect for adults and teens who want to straighten their teeth discreetly. Dr. Padmavathi offers advanced clear aligner treatment in Kakinada with digital planning and precision.',
     benefits: [
       'Virtually invisible - no one will notice you\'re wearing them',
@@ -162,7 +162,7 @@ export const servicesData: Record<string, ServiceData> = {
   crowns: {
     title: 'Dental Crowns in Kakinada',
     subtitle: 'Restore damaged teeth with beautiful, durable crowns',
-    heroImage: 'https://images.pexels.com/photos/6528840/pexels-photo-6528840.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    heroImage: '/services/1/crowns.jpg',
     description: 'Dental crowns, also called caps, are custom-made covers that fit over damaged, decayed, or aesthetically compromised teeth. They restore the tooth\'s shape, size, strength, and appearance. We offer various crown materials including porcelain, ceramic, and zirconia at our Kakinada clinic, ensuring natural-looking and long-lasting results.',
     benefits: [
       'Protects and strengthens weak or damaged teeth',
@@ -197,8 +197,8 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'No, the procedure is performed under local anesthesia. You may experience slight sensitivity after the anesthesia wears off, but this is temporary and manageable.',
       },
       {
-        question: 'What\'s the cost of a dental crown in Kakinada?',
-        answer: 'Cost varies based on material (ceramic, porcelain, zirconia). We offer competitive pricing. Contact us at 85018 02222 for specific pricing.',
+        question: 'What is the cost of a dental crown in Kakinada?',
+        answer: 'Cost varies based on material (ceramic, porcelain, zirconia). We offer competitive pricing. Contact us at 8501802222 for specific pricing.',
       },
     ],
     metaTitle: 'Dental Crowns Kakinada | Porcelain & Zirconia Caps | Dr. Padmavathi',
@@ -209,7 +209,7 @@ export const servicesData: Record<string, ServiceData> = {
   dentures: {
     title: 'Dentures in Kakinada',
     subtitle: 'Complete and partial dentures for missing teeth',
-    heroImage: 'https://images.pexels.com/photos/8853489/pexels-photo-8853489.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    heroImage: '/services/1/Dentures.jpg',
     description: 'Dentures are removable replacements for missing teeth and surrounding tissues. We provide both complete dentures (for all missing teeth) and partial dentures (for some missing teeth) at our Kakinada clinic. Our custom-fitted dentures restore your ability to eat, speak, and smile with confidence.',
     benefits: [
       'Restores ability to chew and eat comfortably',
@@ -244,7 +244,7 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'Dentures typically last 5-10 years with proper care. As your gums and bone change shape over time, dentures may need adjustment or replacement.',
       },
       {
-        question: 'What\'s the cost of dentures in Kakinada?',
+        question: 'What is the cost of dentures in Kakinada?',
         answer: 'Cost varies based on whether you need complete or partial dentures and the materials used. We offer affordable options. Contact us for pricing details.',
       },
     ],
@@ -256,7 +256,7 @@ export const servicesData: Record<string, ServiceData> = {
   fillings: {
     title: 'Dental Fillings in Kakinada',
     subtitle: 'Tooth-colored fillings for cavities and decay',
-    heroImage: '/services/Dental-Fillings.jpg',
+    heroImage: '/services/1/filling.jpg',
     description: 'Dental fillings are used to repair teeth damaged by decay or cavities. We specialize in tooth-colored composite fillings that blend naturally with your teeth, providing both functional restoration and aesthetic appeal. Our pain-free filling procedures in Kakinada ensure your comfort throughout treatment.',
     benefits: [
       'Stops cavity progression and prevents further decay',
@@ -292,7 +292,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         question: 'How much does a filling cost in Kakinada?',
-        answer: 'Cost varies based on cavity size and location. We offer affordable pricing for quality fillings. Contact us at 85018 02222 for details.',
+        answer: 'Cost varies based on cavity size and location. We offer affordable pricing for quality fillings. Contact us at 8501802222 for details.',
       },
     ],
     metaTitle: 'Dental Fillings Kakinada | Tooth-Colored Cavities Treatment | Dr. Padmavathi',
@@ -303,7 +303,7 @@ export const servicesData: Record<string, ServiceData> = {
   'gap-closure': {
     title: 'Gap Closure Treatment in Kakinada',
     subtitle: 'Close spaces between teeth for a confident smile',
-    heroImage: 'https://images.pexels.com/photos/6502307/pexels-photo-6502307.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    heroImage: '/services/1/gap-between-teeth.jpg',
     description: 'Tooth gaps or spaces (diastema) can affect your smile\'s appearance and self-confidence. We offer multiple gap closure solutions including braces, clear aligners, dental bonding, and veneers at our Kakinada clinic. Dr. Padmavathi will recommend the best treatment based on your specific needs and preferences.',
     benefits: [
       'Improves smile aesthetics and confidence',
@@ -350,7 +350,7 @@ export const servicesData: Record<string, ServiceData> = {
   'gum-treatment': {
     title: 'Gum Treatment in Kakinada',
     subtitle: 'Expert care for healthy gums and beautiful smiles',
-    heroImage: '/services/Gum-Treatment.jpg',
+    heroImage: '/services/1/Gum-treatment.jpg',
     description: 'Gum disease (periodontal disease) affects millions and can lead to tooth loss if untreated. At Dr. Padmavathi\'s Clinic in Kakinada, we provide comprehensive gum treatments including deep cleaning, scaling, root planing, and laser gum therapy. Early treatment is key to preserving your natural teeth and overall oral health.',
     benefits: [
       'Prevents tooth loss from gum disease',
@@ -397,7 +397,7 @@ export const servicesData: Record<string, ServiceData> = {
   implants: {
     title: 'Dental Implants in Kakinada',
     subtitle: 'Permanent tooth replacement with dental implants',
-    heroImage: '/services/Dental-Implant.jpg',
+    heroImage: '/services/1/implant.jpg',
     description: 'Dental implants are the gold standard for replacing missing teeth. These titanium posts are surgically placed into the jawbone and act as artificial tooth roots. At Dr. Padmavathi\'s Dental Clinic in Kakinada, we offer advanced implant solutions that look, feel, and function like natural teeth with a 98% success rate.',
     benefits: [
       'Most natural-looking and permanent solution',
@@ -432,8 +432,8 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'Most adults with good overall health and adequate jawbone are candidates. Dr. Padmavathi will assess your suitability through examination and 3D scans.',
       },
       {
-        question: 'What\'s the cost of dental implants in Kakinada?',
-        answer: 'Cost includes implant, abutment, and crown. We offer competitive pricing and payment plans. Contact us at 85018 02222 for a detailed quote.',
+        question: 'What is the cost of dental implants in Kakinada?',
+        answer: 'Cost includes implant, abutment, and crown. We offer competitive pricing and payment plans. Contact us at 8501802222 for a detailed quote.',
       },
     ],
     metaTitle: 'Dental Implants Kakinada | Permanent Tooth Replacement | Dr. Padmavathi',
@@ -444,7 +444,7 @@ export const servicesData: Record<string, ServiceData> = {
   'kids-dentistry': {
     title: 'Pediatric Dentistry in Kakinada',
     subtitle: 'Gentle dental care for children with specialized expertise',
-    heroImage: '/services/pediatric-dentistry.jpg',
+    heroImage: '/services/1/kids-dentistry.jpg',
     description: 'Dr. Padmavathi is a specialist pediatric dentist (MDS Pedodontist) providing child-friendly dental care in Kakinada. We create a comfortable, fun environment where children feel safe and relaxed. From first dental visit to teenage years, we ensure your child develops healthy oral habits and maintains a beautiful smile.',
     benefits: [
       'Specialist MDS Pedodontist with FAGE certification',
@@ -491,7 +491,7 @@ export const servicesData: Record<string, ServiceData> = {
   'laser-dentistry': {
     title: 'Laser Dentistry in Kakinada',
     subtitle: 'Advanced, painless dental treatments with laser technology',
-    heroImage: 'https://images.pexels.com/photos/6528842/pexels-photo-6528842.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    heroImage: '/services/1/Laser-dentistry.jpg',
     description: 'Laser dentistry represents the future of dental care, offering precise, minimally invasive treatments with faster healing. At our Kakinada clinic, we use advanced dental lasers for gum treatments, cavity removal, teeth whitening, and oral surgeries. Experience painless dentistry with minimal bleeding and faster recovery.',
     benefits: [
       'Virtually painless procedures',
@@ -538,7 +538,7 @@ export const servicesData: Record<string, ServiceData> = {
   'night-guard': {
     title: 'Night Guard in Kakinada',
     subtitle: 'Custom mouth guards for teeth grinding and TMJ',
-    heroImage: '/services/night-guard.jpg',
+    heroImage: '/services/1/night-guard.jpg',
     description: 'Night guards (occlusal guards) protect your teeth from grinding and clenching during sleep (bruxism). Custom-fitted at our Kakinada clinic, these appliances prevent tooth wear, jaw pain, and headaches. If you wake up with jaw soreness or have worn-down teeth, a night guard can provide relief and protection.',
     benefits: [
       'Prevents tooth wear and damage from grinding',
@@ -585,7 +585,7 @@ export const servicesData: Record<string, ServiceData> = {
   'root-canal': {
     title: 'Root Canal Treatment in Kakinada',
     subtitle: 'Painless root canal therapy to save your natural teeth',
-    heroImage: '/services/Root_Canal.svg',
+    heroImage: '/services/1/root-canal.webp',
     description: 'Root canal treatment (RCT) is a procedure that saves severely decayed or infected teeth from extraction. Using advanced techniques and technology, Dr. Padmavathi provides painless root canal treatment in Kakinada. We remove infected pulp, clean the canal, and seal it to preserve your natural tooth for years to come.',
     benefits: [
       'Saves your natural tooth from extraction',
@@ -620,8 +620,8 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'With proper care and a crown, a root canal-treated tooth can last a lifetime. Regular checkups ensure long-term success.',
       },
       {
-        question: 'What\'s the cost of root canal treatment in Kakinada?',
-        answer: 'Cost varies based on tooth location (front/back) and complexity. We offer affordable pricing. Contact us at 85018 02222 for details.',
+        question: 'What is the cost of root canal treatment in Kakinada?',
+        answer: 'Cost varies based on tooth location (front/back) and complexity. We offer affordable pricing. Contact us at 8501802222 for details.',
       },
     ],
     metaTitle: 'Root Canal Treatment Kakinada | Painless RCT | Dr. Padmavathi Dental',
@@ -632,7 +632,7 @@ export const servicesData: Record<string, ServiceData> = {
   scaling: {
     title: 'Teeth Scaling in Kakinada',
     subtitle: 'Professional dental cleaning for healthy teeth and gums',
-    heroImage: 'https://images.pexels.com/photos/3845653/pexels-photo-3845653.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    heroImage: '/services/1/scaling-cleaning.jpg',
     description: 'Teeth scaling and polishing is a professional deep cleaning procedure that removes plaque, tartar, and stains from your teeth. Essential for maintaining oral health, scaling prevents gum disease, cavities, and bad breath. At our Kakinada clinic, we provide gentle, thorough scaling using ultrasonic technology for optimal results.',
     benefits: [
       'Prevents gum disease and tooth decay',
@@ -679,7 +679,7 @@ export const servicesData: Record<string, ServiceData> = {
   'smile-designing': {
     title: 'Smile Designing in Kakinada',
     subtitle: 'Transform your smile with cosmetic dentistry',
-    heroImage: 'https://images.pexels.com/photos/6502307/pexels-photo-6502307.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    heroImage: '/services/1/smile-design.jpg',
     description: 'Smile designing is a comprehensive cosmetic approach to creating your perfect smile. Combining multiple treatments like veneers, crowns, whitening, and orthodontics, we craft a customized plan to address all aesthetic concerns. Dr. Padmavathi uses digital smile design technology to preview your new smile before treatment begins.',
     benefits: [
       'Complete smile transformation',
@@ -726,7 +726,7 @@ export const servicesData: Record<string, ServiceData> = {
   'teeth-whitening': {
     title: 'Teeth Whitening in Kakinada',
     subtitle: 'Professional teeth whitening for a brighter smile',
-    heroImage: '/services/teeth-whitening.jpg',
+    heroImage: '/services/1/teeth-whitening.jpg',
     description: 'Professional teeth whitening safely and effectively removes stains and discoloration, giving you a brighter, more confident smile. We offer both in-office laser whitening (instant results) and take-home whitening kits at our Kakinada clinic. Achieve 3-8 shades whiter teeth with our expert whitening treatments.',
     benefits: [
       'Dramatically whiter teeth (3-8 shades)',
@@ -773,7 +773,7 @@ export const servicesData: Record<string, ServiceData> = {
   veneers: {
     title: 'Dental Veneers in Kakinada',
     subtitle: 'Transform your smile with porcelain veneers',
-    heroImage: '/services/porcelain-veneers.jpg',
+    heroImage: '/services/1/porcelain-veneers.jpg',
     description: 'Dental veneers are thin shells of porcelain or composite bonded to the front of teeth to improve appearance. Perfect for correcting discoloration, chips, gaps, or misshapen teeth, veneers provide a natural-looking, dramatic smile transformation. Our Kakinada clinic offers premium quality veneers with expert craftsmanship.',
     benefits: [
       'Instant smile transformation',

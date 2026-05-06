@@ -43,7 +43,7 @@ export default function SpecialtiesPage() {
       title: 'Root Canal Treatment',
       slug: 'root-canal',
       description: 'Pain-free root canal therapy to save your natural teeth. Advanced techniques for comfortable treatment.',
-      image: '/services/Root_Canal.svg',
+      image: '/services/1/root-canal.webp',
       category: 'Endodontics'
     },
     {
