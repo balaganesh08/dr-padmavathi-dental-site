@@ -66,7 +66,7 @@ export default function Header() {
                 width={isScrolled ? 72 : 88}
                 height={isScrolled ? 20 : 24}
                 className="object-contain w-full h-full"
-                style={{ objectFit: 'contain' }}
+                style={{ objectFit: 'contain', width: 'auto', height: 'auto' }}
                 priority
               />
             </div>

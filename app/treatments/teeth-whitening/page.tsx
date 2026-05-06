@@ -137,6 +137,7 @@ export default function TeethWhiteningPage() {
                     alt="Professional Teeth Whitening in Kakinada - Dr. Padmavathi Dental Clinic"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority
                   />
                 </div>

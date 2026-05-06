@@ -22,21 +22,21 @@ export default function SpecialtiesPage() {
       title: 'Dental Implants',
       slug: 'implants',
       description: 'Permanent tooth replacement solution for a natural-looking smile. Advanced titanium implants that last a lifetime.',
-      image: '/services/Dental-Implant.jpg',
+      image: '/services/1/implant.jpg',
       category: 'Restorative'
     },
     {
       title: 'Braces',
       slug: 'braces',
       description: 'Straighten your teeth with traditional metal or ceramic braces. Custom treatment plans for perfect smiles.',
-      image: '/services/Braces.jpg',
+      image: '/services/1/braces.jpg',
       category: 'Orthodontics'
     },
     {
       title: 'Clear Aligners',
       slug: 'clear-aligners',
       description: 'Invisible orthodontic treatment. Straighten teeth discreetly with removable aligners.',
-      image: '/services/clear-aligners.jpg',
+      image: '/services/1/Clear-aligner.jpg',
       category: 'Orthodontics'
     },
     {
@@ -50,91 +50,91 @@ export default function SpecialtiesPage() {
       title: 'Kids Dentistry',
       slug: 'kids-dentistry',
       description: 'Specialized dental care for children in a friendly environment. Making dental visits fun and comfortable.',
-      image: '/services/pediatric-dentistry.jpg',
+      image: '/services/1/kids-dentistry.jpg',
       category: 'Pediatric'
     },
     {
       title: 'Teeth Whitening',
       slug: 'teeth-whitening',
       description: 'Professional teeth whitening in just one hour. Get a brighter, whiter smile with safe and effective treatments.',
-      image: '/services/teeth-whitening.jpg',
+      image: '/services/1/teeth-whitening.jpg',
       category: 'Cosmetic'
     },
     {
       title: 'Smile Designing',
       slug: 'smile-designing',
       description: 'Complete smile makeover to enhance your confidence. Combining multiple treatments for your dream smile.',
-      image: '/services/teeth-whitening.jpg',
+      image: '/services/1/smile-design.jpg',
       category: 'Cosmetic'
     },
     {
       title: 'Dental Crowns',
       slug: 'crowns',
       description: 'Durable crowns to restore damaged or weakened teeth. Custom-made for natural appearance and function.',
-      image: '/services/Dental-Implant.jpg',
+      image: '/services/1/crowns.jpg',
       category: 'Restorative'
     },
     {
       title: 'Dentures',
       slug: 'dentures',
       description: 'Full and partial dentures for comfortable tooth replacement. Natural-looking and perfectly fitted.',
-      image: '/services/dental-bridge.jpg',
+      image: '/services/1/Dentures.jpg',
       category: 'Prosthodontics'
     },
     {
       title: 'Scaling & Cleaning',
       slug: 'scaling',
       description: 'Professional deep cleaning to maintain healthy gums and teeth. Prevent gum disease and tooth decay.',
-      image: '/services/Gum-Treatment.jpg',
+      image: '/services/1/scaling-cleaning.jpg',
       category: 'Preventive'
     },
     {
       title: 'Dental Fillings',
       slug: 'fillings',
       description: 'Tooth-colored fillings for natural appearance. Restore decayed or damaged teeth seamlessly.',
-      image: '/services/Dental-Fillings.jpg',
+      image: '/services/1/filling.jpg',
       category: 'Restorative'
     },
     {
       title: 'Gum Treatment',
       slug: 'gum-treatment',
       description: 'Advanced treatments for healthy gums. Cure bleeding gums and periodontal disease.',
-      image: '/services/Gum-Treatment.jpg',
+      image: '/services/1/Gum-treatment.jpg',
       category: 'Periodontics'
     },
     {
       title: 'Dental Bridge',
       slug: 'bridge',
       description: 'Fixed bridgework to replace missing teeth. Restore your smile and chewing function.',
-      image: '/services/dental-bridge.jpg',
+      image: '/services/1/bridge.jpg',
       category: 'Restorative'
     },
     {
       title: 'Porcelain Veneers',
       slug: 'veneers',
       description: 'Porcelain veneers for a flawless smile transformation. Ultra-thin shells for perfect teeth.',
-      image: '/services/porcelain-veneers.jpg',
+      image: '/services/1/porcelain-veneers.jpg',
       category: 'Cosmetic'
     },
     {
       title: 'Laser Dentistry',
       slug: 'laser-dentistry',
       description: 'Advanced laser technology for precise and comfortable treatments. Minimally invasive procedures.',
-      image: '/services/Dental-Implant.jpg',
+      image: '/services/1/Laser-dentistry.jpg',
       category: 'Advanced'
     },
     {
       title: 'Night Guard',
       slug: 'night-guard',
       description: 'Custom night guards for teeth grinding and TMJ disorders. Protect your teeth while you sleep.',
-      image: '/services/night-guard.jpg',
+      image: '/services/1/night-guard.jpg',
       category: 'Preventive'
     },
     {
       title: 'Gap Closure',
       slug: 'gap-closure',
       description: 'Specialized treatment to close gaps between teeth. Achieve a uniform, beautiful smile.',
-      image: '/services/Braces.jpg',
+      image: '/services/1/gap-between-teeth.jpg',
       category: 'Orthodontics'
     },
   ];
@@ -230,6 +230,7 @@ export default function SpecialtiesPage() {
                       alt={specialty.title}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute top-3 right-3">
                       <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-teal-700 text-xs font-semibold rounded-full">

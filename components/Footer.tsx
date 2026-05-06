@@ -26,7 +26,7 @@ export default function Footer() {
                   width={88}
                   height={24}
                   className="object-contain w-full h-full"
-                  style={{ objectFit: 'contain' }}
+                  style={{ objectFit: 'contain', width: 'auto', height: 'auto' }}
                   priority
                 />
               </div>
