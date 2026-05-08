@@ -198,6 +198,7 @@ export default function Hero() {
                   ref={videoRef}
                   poster="/Dr_Padmavathi.JPG"
                   className="w-full h-full object-cover"
+                  title="Dr. Padmavathi Dental Clinic Video"
                   autoPlay
                   muted
                   loop

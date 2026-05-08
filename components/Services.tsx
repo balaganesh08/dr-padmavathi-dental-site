@@ -124,12 +124,14 @@ export default function Services() {
                 href={serviceUrl}
                 className="card group hover:border-teal-300 cursor-pointer transform hover:-translate-y-1 transition-all duration-300 hover:scale-[1.02]"
                 style={{ animationDelay: `${index * 50}ms` }}
+                title={`Learn more about ${service.title}`}
               >
                 <div className="bg-gradient-to-br from-teal-50 to-green-50 rounded-2xl w-16 h-16 flex items-center justify-center mb-4 group-hover:from-teal-600 group-hover:to-green-600 transition-all duration-300 shadow-md group-hover:shadow-lg">
                   {serviceConfig.type === 'image' && serviceConfig.path ? (
                     <Image
                       src={serviceConfig.path}
                       alt={service.title}
+                      title={service.title}
                       width={40}
                       height={40}
                       className="w-10 h-10 transition-all duration-300 group-hover:scale-110"
@@ -155,6 +157,7 @@ export default function Services() {
           <Link
             href="/specialties"
             className="btn-primary inline-block"
+            title="View all our dental specialties"
           >
             View All Services
           </Link>

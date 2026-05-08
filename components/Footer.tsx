@@ -23,6 +23,7 @@ export default function Footer() {
                 <Image
                   src="/logo.png"
                   alt="Dr. Padmavathi's Dental Hospital & Implant Centre"
+                  title="Dr. Padmavathi's Dental Hospital & Implant Centre Logo"
                   width={88}
                   height={24}
                   className="object-contain w-full h-full"
@@ -47,6 +48,7 @@ export default function Footer() {
                 <a
                   href="tel:8501802222"
                   className="text-gray-300 hover:text-teal-400 transition-colors font-medium text-sm"
+                  title="Call us at 8501802222"
                 >
                   85018 02222
                 </a>
@@ -58,6 +60,7 @@ export default function Footer() {
                 <a
                   href="mailto:dr.padmavathi25@gmail.com"
                   className="text-gray-300 hover:text-teal-400 transition-colors text-sm break-all"
+                  title="Email us at dr.padmavathi25@gmail.com"
                 >
                   dr.padmavathi25@gmail.com
                 </a>
@@ -73,6 +76,7 @@ export default function Footer() {
                 <a
                   href="/#home"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
+                  title="Go to Home Page"
                 >
                   {t.nav.home}
                 </a>
@@ -81,6 +85,7 @@ export default function Footer() {
                 <a
                   href="/about"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
+                  title="Learn about Dr. Padmavathi"
                 >
                   {t.nav.about}
                 </a>
@@ -89,6 +94,7 @@ export default function Footer() {
                 <a
                   href="/#services"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
+                  title="View our Dental Services"
                 >
                   {t.nav.services}
                 </a>
@@ -97,6 +103,7 @@ export default function Footer() {
                 <a
                   href="/specialties"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
+                  title="View our Dental Specialties"
                 >
                   Specialties
                 </a>
@@ -105,6 +112,7 @@ export default function Footer() {
                 <a
                   href="/blog"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
+                  title="Read our Dental Blog"
                 >
                   Blog
                 </a>
@@ -113,6 +121,7 @@ export default function Footer() {
                 <a
                   href="/testimonials"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
+                  title="Read Patient Testimonials"
                 >
                   {t.nav.testimonials}
                 </a>
@@ -121,6 +130,7 @@ export default function Footer() {
                 <a
                   href="/gallery"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
+                  title="View our Clinic Gallery"
                 >
                   {t.nav.gallery}
                 </a>
@@ -129,6 +139,7 @@ export default function Footer() {
                 <a
                   href="/contact"
                   className="text-gray-400 hover:text-teal-400 transition-all duration-200 hover:translate-x-1 inline-block text-sm"
+                  title="Contact Our Dental Clinic"
                 >
                   {t.nav.contact}
                 </a>
@@ -145,6 +156,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium px-5 py-2.5 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm"
+                title="Follow us on Instagram"
               >
                 <FiInstagram className="w-4 h-4" />
                 <span>Follow on Instagram</span>

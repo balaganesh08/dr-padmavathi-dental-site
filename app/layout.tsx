@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: 'Top-rated dental clinic in Kakinada offering dental implants, braces, root canal, teeth whitening & kids dentistry. Dr. Padmavathi - MDS, FAGE Specialist Pedodontist. 4200+ Happy Patients. Call 8501802222',
   keywords: 'best dentist Kakinada, dental clinic Kakinada, dental implants Kakinada, pediatric dentist Kakinada, kids dentistry Kakinada, teeth whitening Kakinada, braces Kakinada, root canal Kakinada, cosmetic dentistry Kakinada, Dr Padmavathi dentist, dental hospital Kakinada',
   authors: [{ name: 'Dr. Padmavathi' }],
+  publisher: 'Dr. Padmavathi Dental Hospital & Implant Centre',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   icons: {
     icon: '/favicon.ico',
   },
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'google-site-verification: meta-tag-content-here',
   },
   alternates: {
     canonical: 'https://padmavathisdental.com',

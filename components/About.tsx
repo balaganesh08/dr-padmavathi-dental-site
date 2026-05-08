@@ -99,6 +99,7 @@ export default function About() {
                 <Image
                   src="/Dr_Padmavathi.JPG"
                   alt="Dr. Padmavathi Devi - Specialist Pedodontist"
+                  title="Dr. Padmavathi Devi - Specialist Pedodontist"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

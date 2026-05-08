@@ -54,6 +54,7 @@ export default function Header() {
           <Link
             href="/"
             className="flex-shrink-0 group"
+            title="Go to Home Page"
           >
             <div className="relative group-hover:scale-105 transition-transform" style={{ 
               width: isScrolled ? '72px' : '88px',
@@ -63,6 +64,7 @@ export default function Header() {
               <Image
                 src="/logo.png"
                 alt="Dr. Padmavathi's Dental Hospital & Implant Centre"
+                title="Dr. Padmavathi's Dental Hospital & Implant Centre Logo"
                 width={isScrolled ? 72 : 88}
                 height={isScrolled ? 20 : 24}
                 className="object-contain w-full h-full"
@@ -79,30 +81,35 @@ export default function Header() {
               <a
                 href="/"
                 className="px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+                title="Navigate to Home Page"
               >
                 {t.nav.home}
               </a>
               <a
                 href="/specialties"
                 className="px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+                title="View our Dental Specialties"
               >
                 Specialties
               </a>
               <a
                 href="/about"
                 className="px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+                title="Learn about Dr. Padmavathi"
               >
                 {t.nav.about}
               </a>
               <a
                 href="/testimonials"
                 className="px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+                title="Read Patient Testimonials"
               >
                 {t.nav.testimonials}
               </a>
               <a
                 href="/contact"
                 className="px-3 py-2 text-sm text-gray-700 hover:text-teal-600 font-medium transition-all duration-200 rounded-lg hover:bg-teal-50 whitespace-nowrap"
+                title="Contact Our Dental Clinic"
               >
                 {t.nav.contact}
               </a>
@@ -139,6 +146,7 @@ export default function Header() {
             <a
               href="tel:8501802222"
               className="bg-gradient-to-r from-teal-600 to-green-600 hover:from-teal-700 hover:to-green-700 text-white font-medium py-2.5 px-5 xl:px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center space-x-2 whitespace-nowrap text-sm"
+              title="Call us at 8501802222"
             >
               <FiPhone className="w-4 h-4" />
               <span>{t.nav.callNow}</span>
@@ -166,6 +174,7 @@ export default function Header() {
               href="/"
               className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
               onClick={() => setIsMobileMenuOpen(false)}
+              title="Navigate to Home Page"
             >
               {t.nav.home}
             </a>
@@ -173,6 +182,7 @@ export default function Header() {
               href="/specialties"
               className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
               onClick={() => setIsMobileMenuOpen(false)}
+              title="View our Dental Specialties"
             >
               Specialties
             </a>
@@ -180,6 +190,7 @@ export default function Header() {
               href="/about"
               className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
               onClick={() => setIsMobileMenuOpen(false)}
+              title="Learn about Dr. Padmavathi"
             >
               {t.nav.about}
             </a>
@@ -187,6 +198,7 @@ export default function Header() {
               href="/testimonials"
               className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
               onClick={() => setIsMobileMenuOpen(false)}
+              title="Read Patient Testimonials"
             >
               {t.nav.testimonials}
             </a>
@@ -194,6 +206,7 @@ export default function Header() {
               href="/contact"
               className="block w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-all"
               onClick={() => setIsMobileMenuOpen(false)}
+              title="Contact Our Dental Clinic"
             >
               {t.nav.contact}
             </a>
@@ -224,6 +237,7 @@ export default function Header() {
               <a
                 href="tel:8501802222"
                 className="bg-gradient-to-r from-teal-600 to-green-600 text-white font-medium py-2.5 px-5 rounded-xl shadow-md flex items-center space-x-2 whitespace-nowrap text-sm"
+                title="Call us at 8501802222"
               >
                 <FiPhone />
                 <span>{t.nav.callNow}</span>
