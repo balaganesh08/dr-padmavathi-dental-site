@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
     // Send email to clinic
     const emailData = {
       from: 'noreply@padmavathisdental.com',
-      to: 'shivaganeshram7@gmail.com', // Clinic email for lead notifications
+      to: ['shivaganeshram7@gmail.com', 'dr.padmavathi25@gmail.com'], // Clinic email for lead notifications
       subject: `New Dental Appointment Request from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
