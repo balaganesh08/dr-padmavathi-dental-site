@@ -137,6 +137,20 @@ export default function SpecialtiesPage() {
       image: '/services/1/gap-between-teeth.jpg',
       category: 'Orthodontics'
     },
+    {
+      title: 'Oral Surgeries',
+      slug: 'oral-surgeries',
+      description: 'Expert surgical procedures including extractions, wisdom teeth removal, and complex dental conditions.',
+      image: '/services/1/oral-surgery.png',
+      category: 'Surgical'
+    },
+    {
+      title: 'Jaw Fractures',
+      slug: 'jaw-fractures',
+      description: 'Specialized treatment, management, and surgical repair for facial trauma and jaw fractures.',
+      image: '/services/1/jaw-fracture.png',
+      category: 'Surgical'
+    },
   ];
 
   const categories = Array.from(new Set(specialties.map(s => s.category)));

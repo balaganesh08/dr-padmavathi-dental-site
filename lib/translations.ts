@@ -167,6 +167,14 @@ export const translations: Record<Language, Translations> = {
           title: 'Laser Dentistry',
           description: 'Advanced laser technology for precise and comfortable dental treatments.',
         },
+        oralSurgeries: {
+          title: 'Oral Surgeries',
+          description: 'Expert surgical procedures for complex dental conditions.',
+        },
+        jawFractures: {
+          title: 'Jaw Fractures',
+          description: 'Specialized treatment and management for jaw fractures.',
+        },
       },
     },
     timings: {
@@ -299,6 +307,14 @@ export const translations: Record<Language, Translations> = {
         laserDentistry: {
           title: 'లేజర్ డెంటిస్ట్రీ',
           description: 'ఖచ్చితమైన మరియు సౌకర్యవంతమైన దంత చికిత్సల కోసం అధునాతన లేజర్ సాంకేతికత.',
+        },
+        oralSurgeries: {
+          title: 'ఓరల్ సర్జరీలు',
+          description: 'సంక్లిష్టమైన దంత పరిస్థితుల కోసం నిపుణులైన శస్త్రచికిత్సా విధానాలు.',
+        },
+        jawFractures: {
+          title: 'దవడ పగుళ్లు',
+          description: 'దవడ పగుళ్లకు ప్రత్యేక చికిత్స మరియు నిర్వహణ.',
         },
       },
     },

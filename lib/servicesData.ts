@@ -816,4 +816,98 @@ export const servicesData: Record<string, ServiceData> = {
     metaDescription: 'Get beautiful porcelain veneers in Kakinada. Instant smile makeover. Natural-looking, durable. Fix gaps, stains, chips. Call 8501802222',
     keywords: 'dental veneers Kakinada, porcelain veneers, cosmetic veneers, smile makeover, tooth veneers Kakinada',
   },
+
+  'oral-surgeries': {
+    title: 'Oral Surgeries in Kakinada',
+    subtitle: 'Expert surgical procedures for complex dental conditions',
+    heroImage: '/services/1/oral-surgery.png',
+    description: 'Oral surgery encompasses a variety of surgical procedures designed to address complex dental issues, including wisdom teeth impaction, severe tooth decay, and preparation for dental implants. At Dr. Padmavathi\'s Dental Clinic, we provide safe, comfortable, and highly effective oral surgical care.',
+    benefits: [
+      'Safe and effective treatment for impacted wisdom teeth',
+      'Preparation of jawbone for successful dental implants',
+      'Relief from severe pain caused by advanced dental conditions',
+      'Painless procedures using modern anesthesia',
+      'Expert post-operative care and guidance',
+      'Minimally invasive techniques for faster recovery',
+    ],
+    procedure: {
+      title: 'Oral Surgery Process',
+      steps: [
+        'Consultation & Imaging: Comprehensive evaluation using 3D scans and X-rays',
+        'Treatment Planning: Detailed discussion of the surgical procedure',
+        'Anesthesia: Administration of local anesthesia or sedation for comfort',
+        'Surgical Procedure: Expert execution of the required surgery',
+        'Post-Operative Care: Instructions and medications for a smooth recovery',
+        'Follow-Up: Monitoring healing progress',
+      ],
+    },
+    faqs: [
+      {
+        question: 'Are oral surgeries painful?',
+        answer: 'No. With the use of modern anesthesia and sedation options, oral surgeries are virtually painless during the procedure. Post-operative discomfort is managed with prescribed medications.',
+      },
+      {
+        question: 'How long does recovery take?',
+        answer: 'Recovery time varies depending on the specific procedure. Simple extractions heal quickly, while more complex surgeries like impacted wisdom teeth removal may require a few days of rest.',
+      },
+      {
+        question: 'What should I eat after oral surgery?',
+        answer: 'Stick to soft foods like yogurt, mashed potatoes, and soup for the first few days. Avoid hot, spicy, or crunchy foods that could irritate the surgical site.',
+      },
+      {
+        question: 'How do I care for the surgical site?',
+        answer: 'We provide detailed post-operative instructions. Generally, avoid vigorous rinsing, smoking, or using a straw for the first 24-48 hours to promote healing.',
+      },
+    ],
+    metaTitle: 'Oral Surgery Kakinada | Wisdom Teeth Removal | Dr. Padmavathi',
+    metaDescription: 'Expert oral surgery in Kakinada. Painless wisdom teeth removal, extractions, and complex dental surgeries. Safe and comfortable care. Call 8501802222',
+    keywords: 'oral surgery Kakinada, wisdom teeth removal, tooth extraction, dental surgery Kakinada',
+  },
+
+  'jaw-fractures': {
+    title: 'Jaw Fractures Treatment in Kakinada',
+    subtitle: 'Specialized care and surgical repair for facial trauma',
+    heroImage: '/services/1/jaw-fracture.png',
+    description: 'Jaw fractures, often resulting from accidents or trauma, require specialized and immediate care to ensure proper healing and restore full function. Dr. Padmavathi offers expert diagnosis and surgical management of jaw fractures, utilizing advanced techniques to ensure optimal recovery and alignment.',
+    benefits: [
+      'Expert management of facial trauma and jaw fractures',
+      'Restoration of proper bite alignment and jaw function',
+      'Prevention of long-term TMJ and bite issues',
+      'Comprehensive care from diagnosis to full recovery',
+      'Advanced imaging for precise treatment planning',
+      'Compassionate support throughout the healing process',
+    ],
+    procedure: {
+      title: 'Jaw Fracture Treatment Process',
+      steps: [
+        'Emergency Assessment: Immediate evaluation of the trauma and airway',
+        'Advanced Imaging: 3D scans and X-rays to determine fracture severity',
+        'Treatment Planning: Deciding between non-surgical or surgical intervention',
+        'Stabilization: Wiring or placing plates/screws to secure the jaw',
+        'Healing Period: Follow-up appointments to monitor bone fusion',
+        'Rehabilitation: Guidance on restoring normal jaw movement and diet',
+      ],
+    },
+    faqs: [
+      {
+        question: 'How is a jaw fracture diagnosed?',
+        answer: 'Diagnosis is made through a combination of physical examination and advanced imaging, such as panoramic X-rays or CT scans, to precisely locate the fracture.',
+      },
+      {
+        question: 'Will my jaw need to be wired shut?',
+        answer: 'Not necessarily. While wiring (maxillomandibular fixation) is a common method for stabilizing fractures, modern surgical techniques often use small plates and screws, which may eliminate the need for wiring.',
+      },
+      {
+        question: 'How long does a broken jaw take to heal?',
+        answer: 'Healing typically takes about 6 weeks. During this time, a modified diet and careful adherence to post-operative instructions are crucial.',
+      },
+      {
+        question: 'What can I eat while my jaw is healing?',
+        answer: 'If your jaw is wired, you will need a liquid diet. If plates and screws are used, a soft-food diet is usually required until healing is complete. We will provide detailed dietary guidelines.',
+      },
+    ],
+    metaTitle: 'Jaw Fractures Treatment Kakinada | Facial Trauma Care | Dr. Padmavathi',
+    metaDescription: 'Specialized treatment for jaw fractures and facial trauma in Kakinada. Expert surgical repair, optimal healing, and compassionate care. Call 8501802222',
+    keywords: 'jaw fracture Kakinada, facial trauma, broken jaw treatment, maxillofacial surgery Kakinada',
+  },
 };

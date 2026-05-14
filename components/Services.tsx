@@ -17,7 +17,9 @@ import {
   FaCrown,
   FaExpand,
   FaLightbulb,
-  FaLayerGroup
+  FaLayerGroup,
+  FaSyringe,
+  FaBone
 } from 'react-icons/fa';
 import { 
   GiToothbrush,
@@ -47,6 +49,8 @@ const serviceIcons: Record<string, { type: 'icon' | 'image', path?: string, comp
   crowns: { type: 'icon', component: FaCrown },
   gapClosure: { type: 'icon', component: FaExpand },
   laserDentistry: { type: 'icon', component: GiLaserBurst },
+  oralSurgeries: { type: 'icon', component: FaSyringe },
+  jawFractures: { type: 'icon', component: FaBone },
 };
 
 export default function Services() {
@@ -71,6 +75,8 @@ export default function Services() {
     crowns: '/services/crowns',
     gapClosure: '/services/gap-closure',
     laserDentistry: '/services/laser-dentistry',
+    oralSurgeries: '/services/oral-surgeries',
+    jawFractures: '/services/jaw-fractures',
   };
 
   const serviceKeys = [
@@ -91,6 +97,8 @@ export default function Services() {
     'crowns',
     'gapClosure',
     'laserDentistry',
+    'oralSurgeries',
+    'jawFractures',
   ] as const;
 
   return (
