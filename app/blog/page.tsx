@@ -14,6 +14,15 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const blogs = [
     {
+      slug: 'clear-aligners-kakinada-guide',
+      title: 'Clear Aligners in Kakinada: Benefits, Process & Success Guide',
+      excerpt: 'Discover how clear aligners offer a comfortable, virtually invisible alternative to traditional braces for teeth straightening in Kakinada.',
+      image: '/images/blog/clear-aligners.png',
+      date: 'June 5, 2026',
+      readTime: '6 min read',
+      category: 'Orthodontics'
+    },
+    {
       slug: 'teeth-whitening-guide-kakinada',
       title: 'Professional Teeth Whitening in Kakinada: Complete Guide 2026',
       excerpt: 'Everything you need to know about professional teeth whitening in Kakinada. Learn about procedures, costs, benefits, and how to maintain your bright smile.',

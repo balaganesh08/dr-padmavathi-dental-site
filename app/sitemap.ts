@@ -61,6 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Blog posts
   const blogPosts = [
+    'clear-aligners-kakinada-guide',
     'teeth-cleaning-kakinada-guide',
     'teeth-whitening-guide-kakinada',
     'root-canal-myths-facts-kakinada',

@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://drpadmavathidental.com/sitemap.xml',
+    sitemap: 'https://padmavathisdental.com/sitemap.xml',
   };
 }
 
