@@ -14,7 +14,9 @@ export async function POST(request: NextRequest) {
       if (origin) {
         try {
           const originUrl = new URL(origin);
-          if (allowedHostnames.includes(originUrl.hostname) || originUrl.hostname.endsWith('.vercel.app')) {
+          if (allowedHostnames.includes(originUrl.hostname) || 
+              originUrl.hostname.endsWith('.vercel.app') || 
+              originUrl.hostname.endsWith('.amplifyapp.com')) {
             isAllowed = true;
           }
         } catch (e) {
@@ -23,7 +25,9 @@ export async function POST(request: NextRequest) {
       } else if (referer) {
         try {
           const refererUrl = new URL(referer);
-          if (allowedHostnames.includes(refererUrl.hostname) || refererUrl.hostname.endsWith('.vercel.app')) {
+          if (allowedHostnames.includes(refererUrl.hostname) || 
+              refererUrl.hostname.endsWith('.vercel.app') || 
+              refererUrl.hostname.endsWith('.amplifyapp.com')) {
             isAllowed = true;
           }
         } catch (e) {
