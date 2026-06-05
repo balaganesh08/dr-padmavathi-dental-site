@@ -11,6 +11,7 @@ export default function Contact() {
     phone: '',
     email: '',
     message: '',
+    website: '', // Honeypot field to prevent spam
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -156,6 +157,17 @@ export default function Contact() {
           {/* Contact Form */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Honeypot field to prevent spam */}
+              <div className="hidden" aria-hidden="true">
+                <input
+                  type="text"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
               <div>
                 <label htmlFor="name" className="block text-gray-700 font-medium mb-1.5 text-sm">
                   {t.contact.form.name}

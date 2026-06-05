@@ -14,6 +14,7 @@ export default function ContactPage() {
     phone: '',
     email: '',
     message: '',
+    website: '', // Honeypot field to prevent spam
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
@@ -208,6 +209,17 @@ export default function ContactPage() {
                   Send Us a Message
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot field to prevent spam */}
+                  <div className="hidden" aria-hidden="true">
+                    <input
+                      type="text"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleChange}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       Your Name *

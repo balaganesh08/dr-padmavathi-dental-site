@@ -147,9 +147,9 @@ export default function Hero() {
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-[48ch]">
-                <span className="gradient-text">{t.hero.headline}</span>
+                <span className="gradient-text" suppressHydrationWarning>{t.hero.headline}</span>
               </h1>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl" suppressHydrationWarning>
                 {t.hero.subtext}
               </p>
             </div>

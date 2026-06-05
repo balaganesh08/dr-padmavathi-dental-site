@@ -13,6 +13,7 @@ export default function BookingSection() {
     service: '',
     date: '',
     message: '',
+    website: '', // Honeypot field to prevent spam
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,7 +36,8 @@ export default function BookingSection() {
           email: formData.email,
           message: formData.message,
           service: formData.service,
-          date: formData.date
+          date: formData.date,
+          website: formData.website // Honeypot field
         }),
       });
 
@@ -180,6 +182,17 @@ export default function BookingSection() {
           {/* Booking Form */}
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
             <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Honeypot field to prevent spam */}
+              <div className="hidden" aria-hidden="true">
+                <input
+                  type="text"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   {language === 'en' ? 'Full Name *' : 'పూర్తి పేరు *'}

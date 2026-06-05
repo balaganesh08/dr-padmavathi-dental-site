@@ -3,7 +3,7 @@ const path = require('path');
 
 // Create .env.local file with Resend API key
 const envContent = `# Resend API Key for email service
-RESEND_API_KEY=re_QButf84t_GgYJ8anPNpQ62SbT6eBnrsc4
+RESEND_API_KEY=your_resend_api_key_here
 `;
 
 const envPath = path.join(__dirname, '.env.local');

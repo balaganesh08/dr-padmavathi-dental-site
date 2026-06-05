@@ -1,17 +1,48 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Fallback API key for debugging - REMOVE AFTER FIXING ENV VARIABLES
-const FALLBACK_API_KEY = 're_QButf84t_GgYJ8anPNpQ62SbT6eBnrsc4';
-
 export async function POST(request: NextRequest) {
   try {
-    // Check if API key is available - use env variable first, fallback if missing
-    const apiKey = process.env.RESEND_API_KEY || FALLBACK_API_KEY;
+    // 1. Origin & Referer checks to prevent direct script execution
+    const origin = request.headers.get('origin') || '';
+    const referer = request.headers.get('referer') || '';
+    
+    if (process.env.NODE_ENV === 'production') {
+      const allowedHostnames = ['padmavathisdental.com', 'www.padmavathisdental.com'];
+      let isAllowed = false;
+      
+      if (origin) {
+        try {
+          const originUrl = new URL(origin);
+          if (allowedHostnames.includes(originUrl.hostname) || originUrl.hostname.endsWith('.vercel.app')) {
+            isAllowed = true;
+          }
+        } catch (e) {
+          // Invalid URL format
+        }
+      } else if (referer) {
+        try {
+          const refererUrl = new URL(referer);
+          if (allowedHostnames.includes(refererUrl.hostname) || refererUrl.hostname.endsWith('.vercel.app')) {
+            isAllowed = true;
+          }
+        } catch (e) {
+          // Invalid URL format
+        }
+      }
+      
+      if (!isAllowed) {
+        console.warn(`Blocked request from unauthorized origin: ${origin || 'no origin'} / referer: ${referer || 'no referer'}`);
+        return NextResponse.json({ error: 'Unauthorized request origin' }, { status: 403 });
+      }
+    }
+
+    // 2. Check if API key is available in environment variables
+    const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       console.error('RESEND_API_KEY is not set in environment variables');
       return NextResponse.json(
-        { error: 'Server config error: RESEND_API_KEY missing' },
+        { error: 'Server configuration error' },
         { status: 500 }
       );
     }
@@ -20,10 +51,20 @@ export async function POST(request: NextRequest) {
     const resend = new Resend(apiKey);
     
     const body = await request.json();
-    const { name, phone, email, message } = body;
+    const { name, phone, email, message, website } = body;
+
+    // 3. Honeypot check: if 'website' is filled, it's a bot submission.
+    // Return 200 Success so the bot thinks it succeeded, but DO NOT send any emails.
+    if (website) {
+      console.warn('Bot submission detected via honeypot field. Dropping email sending.');
+      return NextResponse.json({
+        success: true,
+        message: 'Form submitted successfully'
+      });
+    }
 
     // Validate basic structure
-    if (!body.name || !body.email || !body.phone) {
+    if (!name || !email || !phone) {
       console.log('Validation failed - missing required fields');
       return NextResponse.json({
         success: false,
