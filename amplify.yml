@@ -1,0 +1,20 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        # Write environment variables starting with RESEND_ or NEXT_PUBLIC_ to .env.production
+        # so they are available to Next.js server-side code (API routes) at runtime
+        - env | grep -E '^RESEND_|^NEXT_PUBLIC_' > .env.production || true
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
